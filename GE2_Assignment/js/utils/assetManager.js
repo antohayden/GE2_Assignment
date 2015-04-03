@@ -5,13 +5,16 @@ GAME.AssetManager = function(){
     var models = [
         {type: "Battle", path: "Assets/models/BattleShip.json"},
         {type: "Fighter", path: "Assets/models/FighterShip.json"},
-        {type: "Cruiser", path: "Assets/models/CruiserShip.json"}
+        {type: "HeavyCruiser", path: "Assets/models/HeavyCruiserShip.json"},
+        {type: "LightCruiser", path: "Assets/models/LightCruiserShip.json"},
+        {type: "ShuttleShip", path: "Assets/models/ShuttleShip.json"}
     ];
 
     var textures = [
         {type: "Purple", path: "Assets/textures/Purple.png"},
         {type: "Green", path: "Assets/textures/Green.png"},
-        {type: "Red", path: "Assets/textures/Red.png"}
+        {type: "Red", path: "Assets/textures/Red.png"},
+        {type: "Red", path: "Assets/textures/Blue.png"},
     ];
 
     var ml, tl, loadTotal, loaded = 0;
@@ -97,7 +100,7 @@ GAME.AssetManager = function(){
     /*
      * API
      * */
-    //create ships using random loaded material and mesh
+    //create ship using random loaded material and mesh
 
     this.createShipMesh = function(){
 

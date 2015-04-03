@@ -7,11 +7,10 @@ GAME = function(){
         var camera, scene, renderer;
         var cameraController, controls;
         var assetManager;
-        var ships, ship1;
+        var ships = [];
         var loaded = false;
         var prevTime;
 
-        var timer = 0, counter = 0;
         var path;
 
         init();
@@ -40,17 +39,22 @@ GAME = function(){
 
             assetManager = new GAME.AssetManager();
 
-            ship1 = new GAME.Ship();
-            $(document).on("assetsLoaded", function(){
 
-                ship1.mesh = assetManager.createShipMesh();
-                ship1.setPosition(new THREE.Vector3(0,100,0));
+            $(document).on("assetsLoaded", function(){
 
                 path = new GAME.Path();
                 path.drawPath(scene, 0xFF0000);
-                ship1.setTarget(path.getPoints()[0]);
 
-                scene.add(ship1.mesh);
+                for(var i = 0; i < 10; i++) {
+                    var ship1 = new GAME.Ship();
+                    ship1.mesh = assetManager.createShipMesh();
+                    ship1.setPosition(new THREE.Vector3(10 * i, 100 * i, 0));
+
+                    ship1.setPath(path);
+
+                    scene.add(ship1.mesh);
+                    ships.push(ship1);
+                }
                 loaded = true;
             });
 
@@ -74,20 +78,15 @@ GAME = function(){
                 prevTime = time;
 
             var delta = ( time - prevTime ) / 1000;
+            if(delta > 0.1)
+                delta = 0.1;
 
             controls.update(delta);
             prevTime = time;
 
             if(loaded) {
-                ship1.update(delta);
-            }
-
-            timer += delta;
-
-            if(timer > 5) {
-                counter++;
-                ship1.setTarget(path.getPoints()[counter % path.getPoints().length]);
-                timer = 0;
+                for(var i in ships)
+                    ships[i].update(delta);
             }
 
         }

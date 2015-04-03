@@ -39,8 +39,8 @@ GAME.GameObject = function(){
 
     this.update = function(delta){
 
-
         that.updateBehaviours(delta);
+
         acceleration = force.divideScalar(mass);
         that.velocity.add(acceleration.clone().multiplyScalar(delta));
         speed = that.velocity.length();

@@ -5,7 +5,7 @@
 GAME.Path = function(){
 
     var points = [
-        new THREE.Vector3(1000,0,-2000),
+        new THREE.Vector3(500,0,-500),
         new THREE.Vector3(0,0,0),
         new THREE.Vector3(100,0,200)
     ];

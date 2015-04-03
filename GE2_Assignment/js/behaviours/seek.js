@@ -6,16 +6,15 @@ GAME.Seek = function(gameObject){
 
     var that = this;
 
-    var target = new THREE.Vector3(0,100,-100);
+    var target = new THREE.Vector3();
     var desiredVelocity = new THREE.Vector3();
 
     this.setTarget = function(v){
         that.targetReached = false;
         target = v;
-        //that.update();
     };
 
-    this.targetReached = false;
+    this.targetReached = true;
 
     this.update = function(){
 
@@ -30,7 +29,6 @@ GAME.Seek = function(gameObject){
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
             gameObject.velocity.copy(desiredVelocity);
         }
-
 
     };
 
