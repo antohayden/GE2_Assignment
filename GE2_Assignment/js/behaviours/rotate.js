@@ -7,10 +7,9 @@
 
     var that = this;
 
-    var rotationSpeed = 3;
-    var desiredRotation;
-    var targetVector;
-
+    var rotationSpeed = 2;
+    var desiredRotation = new THREE.Quaternion();
+    var targetVector, targetReference;
 
     function setDesiredRotation(){
 
@@ -21,17 +20,24 @@
         v2.normalize();
 
         desiredRotation.setFromUnitVectors(v1,v2);
-    }
+    };
 
-    this.setTargetVector = function(target){
-
-        targetVector = target.clone();
-        desiredRotation = new THREE.Quaternion();
+    function pointToTarget(){
+        targetVector = targetReference.clone();
         setDesiredRotation();
     };
 
+    this.followTargetEnabled = false;
+
+    this.setTargetVector = function(target){
+        targetReference = target;
+        pointToTarget();
+    };
 
     this.update = function(delta){
+
+        if(that.followTargetEnabled)
+            pointToTarget();
 
         gameObject.rotation.slerp(desiredRotation, (rotationSpeed * delta));
         gameObject.updateRotation();

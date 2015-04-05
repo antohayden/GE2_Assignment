@@ -20,7 +20,7 @@ GAME.Seek = function(gameObject){
 
         desiredVelocity.subVectors(target, gameObject.getPosition());
 
-        if(desiredVelocity.length() < 1) {
+        if(desiredVelocity.length() < 10) {
             that.targetReached = true;
             gameObject.velocity.set(0,0,0);
         }else{

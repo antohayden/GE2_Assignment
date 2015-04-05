@@ -1,5 +1,5 @@
 
-GAME.Ship = function(){
+GAME.Seeker = function(){
 
     var that = this;
 
@@ -7,7 +7,6 @@ GAME.Ship = function(){
 
     var seek = new GAME.Seek(this);
     var rotate = new GAME.Rotate(this);
-    var flee = new GAME.Flee(this);
     var path, numPathPoints;
 
     var pathIndex = 0;
@@ -20,22 +19,15 @@ GAME.Ship = function(){
     this.maxSpeed = 100;
 
     this.setTarget = function(target){
-       // seek.setTarget(target);
-        flee.setTarget(target);
+        seek.setTarget(target);
         rotate.setTargetVector(target);
     };
 
     this.updateBehaviours = function(delta){
 
-        //if(!seek.targetReached)
-        //    seek.update(delta);
-        //else {
-        //    that.setTarget(path[pathIndex % numPathPoints]);
-        //    pathIndex++;
-        //}
-
-        if(!flee.fleeDistanceReached)
-            flee.update(delta);
+        if(!seek.targetReached) {
+            seek.update(delta);
+        }
         else {
             that.setTarget(path[pathIndex % numPathPoints]);
             pathIndex++;
@@ -46,4 +38,4 @@ GAME.Ship = function(){
 
 };
 
-GAME.Ship.prototype = Object.create(GAME.GameObject);
+GAME.Seeker.prototype = Object.create(GAME.GameObject);

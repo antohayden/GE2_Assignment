@@ -45,21 +45,24 @@ GAME = function(){
                 path = new GAME.Path();
                 path.drawPath(scene, 0xFF0000);
 
-                for(var i = 0; i < 10; i++) {
-                    var ship1 = new GAME.Ship();
-                    ship1.mesh = assetManager.createShipMesh();
-                    ship1.setPosition(new THREE.Vector3(10 * i, 100 * i, 0));
+                var seeker = new GAME.Seeker();
+                seeker.mesh = assetManager.createShipMesh();
+                seeker.setPosition(new THREE.Vector3(300,100,0));
+                seeker.setPath(path);
+                scene.add(seeker.mesh);
+                ships.push(seeker);
 
-                    ship1.setPath(path);
+                var fleer = new GAME.Fleer();
+                fleer.mesh = assetManager.createShipMesh();
+                fleer.setPosition(new THREE.Vector3(100,0,100));
+                fleer.setTarget(seeker.getPosition());
+                scene.add(fleer.mesh);
+                ships.push(fleer);
 
-                    scene.add(ship1.mesh);
-                    ships.push(ship1);
-                }
                 loaded = true;
             });
 
             window.addEventListener( 'resize', onWindowResize, false );
-
         }
 
         function onWindowResize() {
@@ -68,7 +71,6 @@ GAME = function(){
             camera.updateProjectionMatrix();
 
             renderer.setSize( window.innerWidth, window.innerHeight );
-
         }
 
         function update(){
