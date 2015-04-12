@@ -4,18 +4,18 @@
 * */
 
 GAME = function(){
+
         var camera, scene, renderer;
         var cameraController, controls;
         var assetManager;
-        var ships = [];
-        var loaded = false;
-        var prevTime;
+        var demo;
 
-        var path;
+        var gameObjects = [];
+        var loaded = false;
+        var clock = new THREE.Clock(), delta;
 
         init();
         animate();
-
 
         function init(){
 
@@ -27,6 +27,7 @@ GAME = function(){
             scene.add( light );
 
             cameraController = new THREE.PointerLockControls( camera );
+            cameraController.getObject().position.set(0,0,0);
             controls  = new GAME.Controls(cameraController);
             scene.add( cameraController.getObject() );
             cameraController.enabled = true;
@@ -39,26 +40,13 @@ GAME = function(){
 
             assetManager = new GAME.AssetManager();
 
-
             $(document).on("assetsLoaded", function(){
-
-                path = new GAME.Path();
-                path.drawPath(scene, 0xFF0000);
-
-                var seeker = new GAME.Seeker();
-                seeker.mesh = assetManager.createShipMesh();
-                seeker.setPosition(new THREE.Vector3(300,100,0));
-                seeker.setPath(path);
-                scene.add(seeker.mesh);
-                ships.push(seeker);
-
-                var fleer = new GAME.Fleer();
-                fleer.mesh = assetManager.createShipMesh();
-                fleer.setPosition(new THREE.Vector3(100,0,100));
-                fleer.setTarget(seeker.getPosition());
-                scene.add(fleer.mesh);
-                ships.push(fleer);
-
+                //demo = new GAME.SeekAndFlee(assetManager, gameObjects, scene);
+                //demo = new GAME.ArriveAndSeek(assetManager, gameObjects, scene);
+                //demo = new GAME.SeekAndPursue(assetManager, gameObjects, scene);
+                //demo = new GAME.SeekAndEvade(assetManager, gameObjects, scene);
+                demo = new GAME.MultiWander(assetManager, gameObjects, scene);
+                //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene);
                 loaded = true;
             });
 
@@ -69,26 +57,20 @@ GAME = function(){
 
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
-
             renderer.setSize( window.innerWidth, window.innerHeight );
         }
 
         function update(){
 
-            var time = performance.now();
-            if(!prevTime)
-                prevTime = time;
-
-            var delta = ( time - prevTime ) / 1000;
+            delta = clock.getDelta();
             if(delta > 0.1)
                 delta = 0.1;
 
             controls.update(delta);
-            prevTime = time;
 
             if(loaded) {
-                for(var i in ships)
-                    ships[i].update(delta);
+                for(var i in gameObjects)
+                    gameObjects[i].update(delta);
             }
 
         }
@@ -98,7 +80,4 @@ GAME = function(){
             update();
             renderer.render(scene, camera);
         }
-
-
-
 };

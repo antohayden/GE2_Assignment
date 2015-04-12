@@ -6,7 +6,7 @@ GAME.Fleer = function(){
     GAME.GameObject.call(this);
 
     var flee = new GAME.Flee(this);
-    flee.fleeDistance = 200;
+    flee.fleeDistance = 180;
 
     var path, numPathPoints;
 
@@ -17,7 +17,7 @@ GAME.Fleer = function(){
         numPathPoints = path.length;
     };
 
-    this.maxSpeed = 90;
+    this.maxSpeed = 50;
 
     this.setTarget = function(target){
         flee.setTarget(target);
@@ -29,5 +29,5 @@ GAME.Fleer = function(){
 
 };
 
-GAME.Seeker.prototype = Object.create(GAME.GameObject);
+GAME.Fleer.prototype = Object.create(GAME.GameObject);
 

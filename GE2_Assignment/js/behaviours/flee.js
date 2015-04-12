@@ -10,13 +10,12 @@ GAME.Flee = function(gameObject){
     var desiredVelocity = new THREE.Vector3();
 
     var rotate = new GAME.Rotate(gameObject);
-    rotate.followTargetEnabled = true;
 
+    this.fleeDistanceReached = true;
 
     this.setTarget = function(v){
-        rotate.setTargetVector(v);
-        that.fleeDistanceReached = false;
         target = v;
+        that.fleeDistanceReached = false;
     };
 
     this.fleeDistance = 200;
@@ -26,16 +25,17 @@ GAME.Flee = function(gameObject){
         desiredVelocity.subVectors(gameObject.getPosition(), target);
 
         if(desiredVelocity.length() > that.fleeDistance) {
+            that.fleeDistanceReached = true;
             gameObject.velocity.set(0,0,0);
 
         }else{
             desiredVelocity.normalize();
+            rotate.setTargetVector(desiredVelocity.clone().multiplyScalar(that.fleeDistance * that.fleeDistance));
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
             gameObject.velocity.copy(desiredVelocity);
         }
 
         rotate.update(delta);
-
     };
 
 };

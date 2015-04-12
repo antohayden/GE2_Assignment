@@ -1,8 +1,8 @@
 /*
-*Given a point, move towards that point
-* */
+ *Given a point, move towards that point, decelerating upon arrival
+ * */
 
-GAME.Seek = function(gameObject){
+GAME.Arrive = function(gameObject){
 
     var that = this;
 
@@ -10,6 +10,10 @@ GAME.Seek = function(gameObject){
     var desiredVelocity = new THREE.Vector3();
     var rotate = new GAME.Rotate(gameObject);
     rotate.followTargetEnabled = true;
+
+    var speed, distance;
+
+    this.decelerationFactor = 0.8;
 
     this.setTarget = function(v){
         that.targetReached = false;
@@ -22,16 +26,22 @@ GAME.Seek = function(gameObject){
     this.update = function(delta){
 
         desiredVelocity.subVectors(target, gameObject.getPosition());
+        distance = desiredVelocity.length();
 
-        if(desiredVelocity.length() < (gameObject.maxSpeed / 100) ) {
+        if(distance < (gameObject.maxSpeed / 100) ) {
             that.targetReached = true;
             gameObject.velocity.set(0,0,0);
         }else{
 
-            desiredVelocity.normalize();
-            desiredVelocity.multiplyScalar(gameObject.maxSpeed);
+            speed = distance / that.decelerationFactor;
+            speed = Math.min(speed, gameObject.maxSpeed);
+            if(speed < 1)
+                speed = 1;
+
+            desiredVelocity.multiplyScalar(speed).divideScalar(distance);
             gameObject.velocity.copy(desiredVelocity);
         }
+
         rotate.update(delta);
 
     };

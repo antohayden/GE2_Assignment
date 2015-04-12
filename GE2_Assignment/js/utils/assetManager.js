@@ -14,7 +14,7 @@ GAME.AssetManager = function(){
         {type: "Purple", path: "Assets/textures/Purple.png"},
         {type: "Green", path: "Assets/textures/Green.png"},
         {type: "Red", path: "Assets/textures/Red.png"},
-        {type: "Red", path: "Assets/textures/Blue.png"},
+        {type: "Blue", path: "Assets/textures/Blue.png"},
     ];
 
     var ml, tl, loadTotal, loaded = 0;
