@@ -23,9 +23,9 @@ GAME.Seek = function(gameObject){
 
         desiredVelocity.subVectors(target, gameObject.getPosition());
 
-        if(desiredVelocity.length() < (gameObject.maxSpeed / 100) ) {
+        if(desiredVelocity.length() < (gameObject.maxSpeed / 50) ) {
             that.targetReached = true;
-            gameObject.velocity.set(0,0,0);
+            //gameObject.velocity.set(0,0,0);
         }else{
 
             desiredVelocity.normalize();

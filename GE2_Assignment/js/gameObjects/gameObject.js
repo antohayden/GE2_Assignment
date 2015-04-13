@@ -9,9 +9,9 @@ GAME.GameObject = function(){
     this.look = new THREE.Vector3(0,0,-1);
     this.up = new THREE.Vector3(0,1,0);
     this.right = new THREE.Vector3(1,0,0);
+    this.speed = 0;
 
     var force = new THREE.Vector3();
-    var speed = 0;
     var mass = 1;
     var acceleration = new THREE.Vector3();
 
@@ -34,7 +34,7 @@ GAME.GameObject = function(){
     };
 
     this.applyForce = function(v){
-        force.copy(v);
+        force.add(v);
     };
 
     this.update = function(delta){
@@ -43,10 +43,17 @@ GAME.GameObject = function(){
 
         acceleration = force.divideScalar(mass);
         that.velocity.add(acceleration.clone().multiplyScalar(delta));
-        speed = that.velocity.length();
+        that.speed = that.velocity.length();
+
+        if(that.speed > that.maxSpeed){
+            that.speed = that.maxSpeed;
+            that.velocity.normalize();
+            that.velocity.multiplyScalar(that.speed);
+        }
         position.add(that.velocity.clone().multiplyScalar(delta));
 
         that.mesh.position.copy(position);
+        force.set(0,0,0);
     };
 
     this.updateBehaviours = function(){};

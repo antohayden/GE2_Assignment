@@ -13,7 +13,7 @@ GAME.Arrive = function(gameObject){
 
     var speed, distance;
 
-    this.decelerationFactor = 0.8;
+    this.decelerationFactor = 0.9;
 
     this.setTarget = function(v){
         that.targetReached = false;
@@ -28,9 +28,8 @@ GAME.Arrive = function(gameObject){
         desiredVelocity.subVectors(target, gameObject.getPosition());
         distance = desiredVelocity.length();
 
-        if(distance < (gameObject.maxSpeed / 100) ) {
+        if(distance < (gameObject.maxSpeed / 50) ) {
             that.targetReached = true;
-            gameObject.velocity.set(0,0,0);
         }else{
 
             speed = distance / that.decelerationFactor;

@@ -23,7 +23,7 @@ GAME.Arriver = function(){
 
     this.followPath = false;
 
-    this.maxSpeed = 100;
+    this.maxSpeed = 60;
 
     this.setTarget = function(target){
         arrive.setTarget(target);

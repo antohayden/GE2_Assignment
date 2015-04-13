@@ -12,6 +12,7 @@ GAME.Wander = function(gameObject){
     var randVector = new THREE.Vector3();
     var direction = new THREE.Vector3();
     var perimeterPoint = new THREE.Vector3();
+    var jitterFactor = 0.5;
 
     var target = new THREE.Vector3();
     target.copy(gameObject.look);
@@ -19,8 +20,8 @@ GAME.Wander = function(gameObject){
     var newTarget = new THREE.Vector3();
 
 
-    var wanderRadius = 10;
-    var wanderDistance = 200;
+    var wanderRadius = 8;
+    var wanderDistance = 100;
 
     var seek = new GAME.Seek(gameObject);
 
@@ -50,7 +51,7 @@ GAME.Wander = function(gameObject){
         randVector.set(
             Math.randomBetween(-1,1),
             Math.randomBetween(-1,1),
-            Math.randomBetween(-1,1));
+            Math.randomBetween(-1,1)).multiplyScalar(jitterFactor);
 
         perimeterPoint.add(randVector);
         perimeterPoint.normalize();

@@ -23,7 +23,7 @@ GAME.Seeker = function(){
         setNewPathTarget();
     };
 
-    this.maxSpeed = 100;
+    this.maxSpeed = 60;
 
     this.setTarget = function(target){
         seek.setTarget(target);

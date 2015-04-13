@@ -45,8 +45,9 @@ GAME = function(){
                 //demo = new GAME.ArriveAndSeek(assetManager, gameObjects, scene);
                 //demo = new GAME.SeekAndPursue(assetManager, gameObjects, scene);
                 //demo = new GAME.SeekAndEvade(assetManager, gameObjects, scene);
-                demo = new GAME.MultiWander(assetManager, gameObjects, scene);
+                //demo = new GAME.MultiWander(assetManager, gameObjects, scene);
                 //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene);
+                demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene);
                 loaded = true;
             });
 
