@@ -51,7 +51,7 @@ GAME.ObstacleAvoidance = function(gameObject){
         //    steeringForce.y *= -1;
 
         //apply braking proportional to the obstacles distance
-        var brakingWeight = 0.5;
+        var brakingWeight = 0.4;
         steeringForce.z = (expandedRadius - closestObstacleLocalPosition.z) * brakingWeight;
 
         //convert to world space

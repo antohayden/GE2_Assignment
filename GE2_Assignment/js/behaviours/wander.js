@@ -1,4 +1,3 @@
-
 /*
  *Project a circle in front of gameObject and steer towards the perimeter of the circle
  * */
@@ -12,7 +11,7 @@ GAME.Wander = function(gameObject){
     var randVector = new THREE.Vector3();
     var direction = new THREE.Vector3();
     var perimeterPoint = new THREE.Vector3();
-    var jitterFactor = 0.5;
+    var jitterFactor = 10;
 
     var target = new THREE.Vector3();
     target.copy(gameObject.look);
@@ -20,8 +19,8 @@ GAME.Wander = function(gameObject){
     var newTarget = new THREE.Vector3();
 
 
-    var wanderRadius = 8;
-    var wanderDistance = 100;
+    var wanderRadius = 100;
+    var wanderDistance = 400;
 
     var seek = new GAME.Seek(gameObject);
 
@@ -31,12 +30,12 @@ GAME.Wander = function(gameObject){
 
     this.addTargetObjects = function(scene){
         geometry = new THREE.BoxGeometry( 5, 5, 5 );
-        material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+        material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
         greenCube = new THREE.Mesh( geometry, material );
         scene.add( greenCube );
 
         geometry = new THREE.SphereGeometry( wanderRadius, 32, 32);
-        material = new THREE.MeshBasicMaterial( { color: 0xff0000} );
+        material = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff} );
         redSphere = new THREE.Mesh( geometry, material );
         scene.add( redSphere );
 
@@ -57,8 +56,9 @@ GAME.Wander = function(gameObject){
         perimeterPoint.normalize();
         perimeterPoint.multiplyScalar(wanderRadius);
 
-        direction.copy(gameObject.velocity);
-        direction.normalize();
+        direction.copy(gameObject.look);
+        direction.applyQuaternion(gameObject.rotation);
+        //direction.normalize();
         direction.multiplyScalar(wanderDistance);
         circleCenter.add(direction);
 

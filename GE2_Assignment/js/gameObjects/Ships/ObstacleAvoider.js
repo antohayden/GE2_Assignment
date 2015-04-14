@@ -47,7 +47,6 @@ GAME.ObstacleAvoider = function(){
 
     this.updateBehaviours = function(delta){
 
-
         if(!seek.targetReached)
             seek.update(delta);
 
@@ -59,7 +58,6 @@ GAME.ObstacleAvoider = function(){
         if(p)
             intersectionPoint.position.copy(p);
 
-        //that.applyForce(new THREE.Vector3(0,0,-5));
 
     };
 

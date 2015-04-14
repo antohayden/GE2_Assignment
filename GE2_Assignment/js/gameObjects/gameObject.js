@@ -42,7 +42,7 @@ GAME.GameObject = function(){
         that.updateBehaviours(delta);
 
         acceleration = force.divideScalar(mass);
-        that.velocity.add(acceleration.clone().multiplyScalar(delta));
+        that.velocity.add(acceleration.multiplyScalar(delta));
         that.speed = that.velocity.length();
 
         if(that.speed > that.maxSpeed){
@@ -50,6 +50,7 @@ GAME.GameObject = function(){
             that.velocity.normalize();
             that.velocity.multiplyScalar(that.speed);
         }
+
         position.add(that.velocity.clone().multiplyScalar(delta));
 
         that.mesh.position.copy(position);

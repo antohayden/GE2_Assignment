@@ -41,13 +41,14 @@ GAME = function(){
             assetManager = new GAME.AssetManager();
 
             $(document).on("assetsLoaded", function(){
-                //demo = new GAME.SeekAndFlee(assetManager, gameObjects, scene);
-                //demo = new GAME.ArriveAndSeek(assetManager, gameObjects, scene);
-                //demo = new GAME.SeekAndPursue(assetManager, gameObjects, scene);
-                //demo = new GAME.SeekAndEvade(assetManager, gameObjects, scene);
-                //demo = new GAME.MultiWander(assetManager, gameObjects, scene);
-                //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene);
-                demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene);
+                //demo = new GAME.SeekAndFlee(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.ArriveAndSeek(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.SeekAndPursue(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.SeekAndEvade(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.MultiWander(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.PlaneAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 loaded = true;
             });
 

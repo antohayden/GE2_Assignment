@@ -6,7 +6,7 @@ GAME.LineDrawer = function(){
     var line;
 
     var material = new THREE.LineBasicMaterial({
-        color: 0xFF0000
+        color: Math.random() * 0xffffff
     });
 
     var geometry = new THREE.Geometry();
