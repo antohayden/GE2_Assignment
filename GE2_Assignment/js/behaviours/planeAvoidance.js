@@ -59,29 +59,31 @@ GAME.PlaneAvoidance = function(gameObject){
         feelers = [];
 
         //forward
-        var feeler = gameObject.look.clone().multiplyScalar(feelerLength);
-        feeler.applyMatrix4(gameObject.mesh.matrixWorld);
-        feelers.push(feeler.clone());
+        var feelerBase = gameObject.look.clone().multiplyScalar(feelerLength);
 
-        feeler = gameObject.look.clone().multiplyScalar(feelerLength);
-        feeler.applyAxisAngle(gameObject.up, Math.PI/4);
-        feeler.applyMatrix4(gameObject.mesh.matrixWorld);
-        feelers.push(feeler);
+        var f1 = feelerBase.clone();
+        f1.applyMatrix4(gameObject.mesh.matrixWorld);
+        feelers.push(f1);
 
-        feeler = gameObject.look.clone().multiplyScalar(feelerLength);
-        feeler.applyAxisAngle(gameObject.up, -Math.PI/4);
-        feeler.applyMatrix4(gameObject.mesh.matrixWorld);
-        feelers.push(feeler);
+        var f2 = feelerBase.clone();
+        f2.applyAxisAngle(gameObject.up, Math.PI/4);
+        f2.applyMatrix4(gameObject.mesh.matrixWorld);
+        feelers.push(f2);
 
-        feeler = gameObject.look.clone().multiplyScalar(feelerLength);
-        feeler.applyAxisAngle(gameObject.right, Math.PI/4);
-        feeler.applyMatrix4(gameObject.mesh.matrixWorld);
-        feelers.push(feeler);
+        var f3 = feelerBase.clone();
+        f3.applyAxisAngle(gameObject.up, -Math.PI/4);
+        f3.applyMatrix4(gameObject.mesh.matrixWorld);
+        feelers.push(f3);
 
-        feeler = gameObject.look.clone().multiplyScalar(feelerLength);
-        feeler.applyAxisAngle(gameObject.right, -Math.PI/4);
-        feeler.applyMatrix4(gameObject.mesh.matrixWorld);
-        feelers.push(feeler);
+        var f4 = feelerBase.clone();
+        f4.applyAxisAngle(gameObject.right, Math.PI/4);
+        f4.applyMatrix4(gameObject.mesh.matrixWorld);
+        feelers.push(f4);
+
+        var f5 = feelerBase.clone();
+        f5.applyAxisAngle(gameObject.right, -Math.PI/4);
+        f5.applyMatrix4(gameObject.mesh.matrixWorld);
+        feelers.push(f5);
     };
 
     this.setPlanes = function(_planes){

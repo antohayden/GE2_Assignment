@@ -24,20 +24,20 @@ GAME.Wander = function(gameObject){
 
     var seek = new GAME.Seek(gameObject);
 
-    var greenCube, redSphere;
+    var cube, sphere;
     var geometry, material;
     var showTargets = false;
 
     this.addTargetObjects = function(scene){
         geometry = new THREE.BoxGeometry( 5, 5, 5 );
         material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
-        greenCube = new THREE.Mesh( geometry, material );
-        scene.add( greenCube );
+        cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
 
         geometry = new THREE.SphereGeometry( wanderRadius, 32, 32);
         material = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff} );
-        redSphere = new THREE.Mesh( geometry, material );
-        scene.add( redSphere );
+        sphere = new THREE.Mesh( geometry, material );
+        scene.add( sphere );
 
         showTargets = true;
     };
@@ -63,8 +63,8 @@ GAME.Wander = function(gameObject){
         circleCenter.add(direction);
 
         if(showTargets) {
-            greenCube.position.copy(target);
-            redSphere.position.copy(circleCenter);
+            cube.position.copy(target);
+            sphere.position.copy(circleCenter);
         }
 
         target.copy(circleCenter);
