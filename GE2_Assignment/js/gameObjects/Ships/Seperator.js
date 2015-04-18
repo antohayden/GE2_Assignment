@@ -37,7 +37,7 @@ GAME.Separator = function(){
         var f = separation.update(nearestNeighbours.update());
 
         if(f.length() > 0) {
-            that.applyForce(f);
+            that.applyForce(f.multiplyScalar(that.maxSpeed));
             if(that.logIt)
                 console.log("separating");
         }
