@@ -8,7 +8,7 @@ GAME.Pursuer = function(){
 
     var pursue = new GAME.Pursue(this);
 
-    this.maxSpeed = 50;
+    this.maxSpeed = 30;
 
     this.setTargetObject = function(targetObject){
         pursue.setTargetObject(targetObject);

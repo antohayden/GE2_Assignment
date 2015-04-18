@@ -8,7 +8,7 @@ GAME.SeekAndPursue = function(assetManager, gameObjects, scene){
     seeker.mesh = assetManager.createShipMesh();
     seeker.setPosition(new THREE.Vector3(0,0,0));
     seeker.setPath(path);
-    seeker.followPath = true;
+    seeker.followPath(true);
 
     scene.add(seeker.mesh);
     gameObjects.push(seeker);

@@ -6,28 +6,17 @@ GAME.Seeker = function(){
     GAME.GameObject.call(this);
 
     var seek = new GAME.Seek(this);
-    var path, numPathPoints;
+    var pathFollow = new GAME.PathFollow(this);
 
-    var pathIndex = 1;
-
-    this.followPath = false;
-
-    function setNewPathTarget(){
-        that.setTarget(path[pathIndex % numPathPoints]);
-        pathIndex++;
+    this.followPath = function(bool){
+        pathFollow.followPath = bool;
     };
 
     this.setPath = function(_path){
-        path = _path.getPoints();
-        numPathPoints = path.length;
-        setNewPathTarget();
+        pathFollow.setPath(_path);
     };
 
     this.maxSpeed = 60;
-
-    this.setTarget = function(target){
-        seek.setTarget(target);
-    };
 
     this.updateBehaviours = function(delta){
 
@@ -35,7 +24,7 @@ GAME.Seeker = function(){
             seek.update(delta);
 
         else if(that.followPath)
-            setNewPathTarget();
+            seek.setTarget(pathFollow.getNextPathTarget());
     };
 
 };

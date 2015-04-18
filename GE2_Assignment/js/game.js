@@ -47,8 +47,8 @@ GAME = function(){
                 //demo = new GAME.SeekAndEvade(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.MultiWander(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                //demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                demo = new GAME.PlaneAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.PlaneAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 loaded = true;
             });
 

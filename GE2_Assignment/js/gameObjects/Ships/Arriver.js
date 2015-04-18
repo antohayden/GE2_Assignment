@@ -6,36 +6,25 @@ GAME.Arriver = function(){
     GAME.GameObject.call(this);
 
     var arrive = new GAME.Arrive(this);
-    var path, numPathPoints;
-
-    var pathIndex = 1;
-
-    function setNewPathTarget(){
-        that.setTarget(path[pathIndex % numPathPoints]);
-        pathIndex++;
-    };
+    var pathFollow = new GAME.PathFollow(this);
 
     this.setPath = function(_path){
-        path = _path.getPoints();
-        numPathPoints = path.length;
-        setNewPathTarget();
+        pathFollow.setPath(_path);
     };
 
-    this.followPath = false;
+    this.followPath = function(bool){
+        pathFollow.followPath = bool;
+    };
 
     this.maxSpeed = 60;
-
-    this.setTarget = function(target){
-        arrive.setTarget(target);
-    };
 
     this.updateBehaviours = function(delta){
 
         if(!arrive.targetReached)
             arrive.update(delta);
 
-        else if(that.followPath)
-            setNewPathTarget();
+        else if(pathFollow.followPath)
+            arrive.setTarget(pathFollow.getNextPathTarget());
     };
 
 };

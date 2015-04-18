@@ -9,8 +9,6 @@ GAME.PlaneAvoider = function(){
     var planeAvoidance = new GAME.PlaneAvoidance(this);
     var wander = new GAME.Wander(this);
 
-
-
     var showfeelers = false;
     var feelerLines = [];
 

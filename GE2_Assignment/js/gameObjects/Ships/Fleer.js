@@ -8,15 +8,6 @@ GAME.Fleer = function(){
     var flee = new GAME.Flee(this);
     flee.fleeDistance = 180;
 
-    var path, numPathPoints;
-
-    var pathIndex = 0;
-
-    this.setPath = function(_path){
-        path = _path.getPoints();
-        numPathPoints = path.length;
-    };
-
     this.maxSpeed = 50;
 
     this.setTarget = function(target){

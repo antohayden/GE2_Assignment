@@ -33,7 +33,7 @@ GAME.PlaneAvoidance_Scene = function(assetManager, gameObjects, scene, camera){
     for(var k = 0; k < num_ships; k++) {
         var pAvoider = new GAME.PlaneAvoider(scene);
         pAvoider.mesh = assetManager.createShipMesh();
-        pAvoider.setPosition(new THREE.Vector3(0, 0, k * 10));
+        pAvoider.setPosition(new THREE.Vector3(0, 0, 500));
         pAvoider.showObjects(scene);
         scene.add(pAvoider.mesh);
         gameObjects.push(pAvoider);

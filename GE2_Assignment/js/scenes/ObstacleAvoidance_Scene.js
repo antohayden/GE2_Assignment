@@ -50,7 +50,7 @@ GAME.ObstacleAvoidance_Scene = function(assetManager, gameObjects, scene){
     oaShip.mesh = assetManager.createShipMesh();
     oaShip.setPath(path);
     oaShip.setObstacles(obstacles);
-    oaShip.followPath = true;
+    oaShip.followPath(true);
 
     scene.add(oaShip.mesh);
     gameObjects.push(oaShip);

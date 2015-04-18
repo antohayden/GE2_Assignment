@@ -20,7 +20,7 @@ GAME.Wander = function(gameObject){
 
 
     var wanderRadius = 100;
-    var wanderDistance = 400;
+    var wanderDistance = 300;
 
     var seek = new GAME.Seek(gameObject);
 

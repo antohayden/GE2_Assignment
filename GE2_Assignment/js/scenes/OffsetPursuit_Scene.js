@@ -14,7 +14,7 @@ GAME.OffsetPursuit_Scene = function(assetManager, gameObjects, scene){
     leader.mesh = assetManager.createShipMesh();
     leader.setPosition(new THREE.Vector3(0,0,0));
     leader.setPath(path);
-    leader.followPath = true;
+    leader.followPath(true);
 
     scene.add(leader.mesh);
     gameObjects.push(leader);
