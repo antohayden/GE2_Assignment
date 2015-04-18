@@ -4,6 +4,7 @@
 
 GAME.Path = function(){
 
+    //default path
     var points = [
         new THREE.Vector3(0,0,0),
         new THREE.Vector3(0,-150,-300),

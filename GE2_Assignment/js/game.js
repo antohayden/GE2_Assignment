@@ -19,10 +19,10 @@ GAME = function(){
 
         function init(){
 
-            camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 3000 );
+            camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
 
             scene = new THREE.Scene();
-            var light = new THREE.PointLight( 0xBBBBBB, 5, 1000 );
+            var light = new THREE.AmbientLight( 0xBBBBBB);
             light.position.set( 0,300,0 );
             scene.add( light );
 
@@ -47,8 +47,9 @@ GAME = function(){
                 //demo = new GAME.SeekAndEvade(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.MultiWander(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.PlaneAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.Separation_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 loaded = true;
             });
 
