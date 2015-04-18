@@ -1,17 +1,13 @@
 
-
-GAME.Separator = function(){
+GAME.Cohesion_example = function(){
 
     var that = this;
 
     GAME.GameObject.call(this);
 
-    var wander = new GAME.Wander(this);
-    var separation = new GAME.Separation(this);
+    var cohesion = new GAME.Cohesion(this);
     var nearestNeighbours = new GAME.NearestNeighbours(this);
     var rad, radiusSphere;
-
-    this.logIt;
 
     this.setNeighbourhoodRadius = function(radius){
         rad = radius;
@@ -34,21 +30,19 @@ GAME.Separator = function(){
 
     this.updateBehaviours = function(delta){
 
-        var f = separation.update(nearestNeighbours.update());
+        var n = nearestNeighbours.update();
 
-        if(f.length() > 0) {
-            that.applyForce(f.multiplyScalar(that.maxSpeed));
-        }
-        else {
-            wander.update(delta);
-        }
+        if(n.length > 0){
+            cohesion.update(n,delta);
+        }else
+            that.velocity.set(0,0,0);
 
         if(radiusSphere) {
             radiusSphere.position.copy(that.getPosition());
             radiusSphere.rotation.copy(that.mesh.rotation);
         }
     };
-
 };
 
-GAME.Separator.prototype = Object.create(GAME.GameObject);
+GAME.Cohesion_example.prototype = Object.create(GAME.GameObject);
+

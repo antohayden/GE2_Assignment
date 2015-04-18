@@ -49,7 +49,8 @@ GAME = function(){
                 //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.PlaneAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                demo = new GAME.Separation_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Separation_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.Cohesion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 loaded = true;
             });
 

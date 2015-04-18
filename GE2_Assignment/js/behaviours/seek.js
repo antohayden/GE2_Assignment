@@ -25,7 +25,6 @@ GAME.Seek = function(gameObject){
 
         if(desiredVelocity.length() < (gameObject.maxSpeed / 50) ) {
             that.targetReached = true;
-            //gameObject.velocity.set(0,0,0);
         }else{
 
             desiredVelocity.normalize();

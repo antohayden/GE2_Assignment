@@ -28,21 +28,6 @@ GAME.Wander = function(gameObject){
     var geometry, material;
     var showTargets = false;
 
-    this.addTargetObjects = function(scene){
-        geometry = new THREE.BoxGeometry( 5, 5, 5 );
-        material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
-        cube = new THREE.Mesh( geometry, material );
-        scene.add( cube );
-
-        geometry = new THREE.SphereGeometry( wanderRadius, 32, 32);
-        material = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff} );
-        sphere = new THREE.Mesh( geometry, material );
-        scene.add( sphere );
-
-        showTargets = true;
-    };
-
-
     function setWanderTarget(){
 
         circleCenter.copy(gameObject.getPosition());
@@ -70,6 +55,20 @@ GAME.Wander = function(gameObject){
         target.copy(circleCenter);
         target.add(perimeterPoint);
 
+    };
+
+    this.addTargetObjects = function(scene){
+        geometry = new THREE.BoxGeometry( 5, 5, 5 );
+        material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
+        cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
+
+        geometry = new THREE.SphereGeometry( wanderRadius, 32, 32);
+        material = new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff} );
+        sphere = new THREE.Mesh( geometry, material );
+        scene.add( sphere );
+
+        showTargets = true;
     };
 
     this.update = function(delta){
