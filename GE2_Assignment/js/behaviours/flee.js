@@ -9,8 +9,6 @@ GAME.Flee = function(gameObject){
     var target = new THREE.Vector3();
     var desiredVelocity = new THREE.Vector3();
 
-    var rotate = new GAME.Rotate(gameObject);
-
     this.fleeDistanceReached = true;
 
     this.setTarget = function(v){
@@ -30,12 +28,9 @@ GAME.Flee = function(gameObject){
 
         }else{
             desiredVelocity.normalize();
-            rotate.setTargetVector(desiredVelocity.clone().multiplyScalar(that.fleeDistance * that.fleeDistance));
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
             gameObject.velocity.copy(desiredVelocity);
         }
-
-        rotate.update(delta);
     };
 
 };

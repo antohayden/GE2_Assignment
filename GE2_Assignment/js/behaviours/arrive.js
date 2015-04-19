@@ -8,8 +8,6 @@ GAME.Arrive = function(gameObject){
 
     var target = new THREE.Vector3();
     var desiredVelocity = new THREE.Vector3();
-    var rotate = new GAME.Rotate(gameObject);
-    rotate.followTargetEnabled = true;
 
     var speed, distance;
 
@@ -18,7 +16,6 @@ GAME.Arrive = function(gameObject){
     this.setTarget = function(v){
         that.targetReached = false;
         target = v;
-        rotate.setTargetVector(target);
     };
 
     this.targetReached = true;
@@ -40,8 +37,6 @@ GAME.Arrive = function(gameObject){
             desiredVelocity.multiplyScalar(speed).divideScalar(distance);
             gameObject.velocity.copy(desiredVelocity);
         }
-
-        rotate.update(delta);
 
     };
 

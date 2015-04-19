@@ -18,7 +18,6 @@ GAME.Wander = function(gameObject){
 
     var newTarget = new THREE.Vector3();
 
-
     var wanderRadius = 100;
     var wanderDistance = 300;
 

@@ -4,21 +4,30 @@ GAME.GameObject = function(){
     var that = this;
 
     var position = new THREE.Vector3();
-
-    this.rotation = new THREE.Quaternion();
-    this.look = new THREE.Vector3(0,0,-1);
-    this.up = new THREE.Vector3(0,1,0);
-    this.right = new THREE.Vector3(1,0,0);
-    this.speed = 0;
+    var desiredRotation = new THREE.Quaternion();
 
     var force = new THREE.Vector3();
     var mass = 1;
     var acceleration = new THREE.Vector3();
 
-    this.updateRotation = function(){
+    function setDesiredRotation(){
+
+        var v1 = that.look;
+        var v2 = that.velocity.clone().normalize();
+
+        desiredRotation.setFromUnitVectors(v1,v2);
+    };
+
+    function updateRotation(){
         that.mesh.quaternion.copy(that.rotation);
     };
 
+    this.rotation = new THREE.Quaternion();
+    this.rotationSpeed = 2;
+    this.look = new THREE.Vector3(0,0,-1);
+    this.up = new THREE.Vector3(0,1,0);
+    this.right = new THREE.Vector3(1,0,0);
+    this.speed = 0;
     this.maxSpeed = 5;
     this.velocity = new THREE.Vector3();
 
@@ -52,8 +61,12 @@ GAME.GameObject = function(){
         }
 
         position.add(that.velocity.clone().multiplyScalar(delta));
-
         that.mesh.position.copy(position);
+
+        setDesiredRotation();
+        that.rotation.slerp(desiredRotation, (that.rotationSpeed * delta));
+        updateRotation();
+
         force.set(0,0,0);
     };
 

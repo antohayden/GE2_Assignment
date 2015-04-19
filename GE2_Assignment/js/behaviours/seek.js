@@ -8,13 +8,10 @@ GAME.Seek = function(gameObject){
 
     var target = new THREE.Vector3();
     var desiredVelocity = new THREE.Vector3();
-    var rotate = new GAME.Rotate(gameObject);
-    rotate.followTargetEnabled = true;
 
     this.setTarget = function(v){
         that.targetReached = false;
         target = v;
-        rotate.setTargetVector(target);
     };
 
     this.targetReached = true;
@@ -31,8 +28,6 @@ GAME.Seek = function(gameObject){
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
             gameObject.velocity.copy(desiredVelocity);
         }
-        rotate.update(delta);
-
     };
 
 };

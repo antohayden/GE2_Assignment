@@ -6,7 +6,7 @@ GAME.Separation_Scene = function(assetManager, gameObjects, scene){
 
     for(var i = 0; i < 10; i++) {
 
-        var s = new GAME.Separator();
+        var s = new GAME.Separator_example();
         s.mesh = assetManager.createShipMesh();
         s.setPosition(points[i]);
         s.setGameObjects(gameObjects);
@@ -17,7 +17,7 @@ GAME.Separation_Scene = function(assetManager, gameObjects, scene){
     }
 
 
-    var s2 = new GAME.Separator();
+    var s2 = new GAME.Separator_example();
     s2.mesh = assetManager.createShipMesh();
     s2.setPosition(new THREE.Vector3(0, 0, -300));
     s2.setGameObjects(gameObjects);
