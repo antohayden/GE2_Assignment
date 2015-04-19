@@ -1,2 +1,12 @@
 steering behaviours adopted from source:
 https://unisalesianogames.files.wordpress.com/2011/08/programming-game-ai-by-example-mat-buckland2.pdf?hc_location=ufi
+
+To view examples uncomment demo in game.js file and run index.html
+If running locally, will need to enable in browser
+e.g.
+To enable in Chrome locally:
+-close all current windows
+-create a new shortcut (rename local to differentiate)
+-right click shortcut and select properties
+-append "--allow-file-access-from-files" to target
+-open this shortcut and run here

@@ -1,6 +1,6 @@
 
 
-GAME.Separator = function(){
+GAME.Separator_example = function(){
 
     var that = this;
 
@@ -10,8 +10,6 @@ GAME.Separator = function(){
     var separation = new GAME.Separation(this);
     var nearestNeighbours = new GAME.NearestNeighbours(this);
     var rad, radiusSphere;
-
-    this.logIt;
 
     this.setNeighbourhoodRadius = function(radius){
         rad = radius;
@@ -51,4 +49,4 @@ GAME.Separator = function(){
 
 };
 
-GAME.Separator.prototype = Object.create(GAME.GameObject);
+GAME.Separator_example.prototype = Object.create(GAME.GameObject);
