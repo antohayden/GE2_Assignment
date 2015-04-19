@@ -20,7 +20,7 @@ GAME.OffsetPursuer = function(){
     };
 
     this.updateBehaviours = function(delta){
-        offsetPursuit.update(delta);
+        that.applyForce(offsetPursuit.update(delta));
     };
 };
 

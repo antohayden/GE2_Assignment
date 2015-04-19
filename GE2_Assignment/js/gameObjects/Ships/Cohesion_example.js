@@ -33,7 +33,7 @@ GAME.Cohesion_example = function(){
         var n = nearestNeighbours.update();
 
         if(n.length > 0){
-            cohesion.update(n,delta);
+            that.applyForce(cohesion.update(n,delta));
         }else
             that.velocity.set(0,0,0);
 

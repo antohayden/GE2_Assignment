@@ -54,9 +54,9 @@ GAME.PlaneAvoider = function(){
 
     this.updateBehaviours = function(delta){
 
-        wander.update(delta);
+        that.applyForce(wander.update(delta));
+        that.applyForce(planeAvoidance.update(delta));
 
-        planeAvoidance.update(delta);
         if(showfeelers)
             updateFeelerLines();
     };

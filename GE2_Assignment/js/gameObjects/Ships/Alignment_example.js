@@ -31,11 +31,8 @@ GAME.Alignment_example = function(){
 
     this.updateBehaviours = function(delta){
 
-        var a = alignment.update(nearestNeighbours.update());
-
-        if(a.length() > 0) {
-            that.applyForce(a);
-        }
+        var f = alignment.update(nearestNeighbours.update());
+        that.applyForce(f);
 
         if(radiusSphere) {
             radiusSphere.position.copy(that.getPosition());

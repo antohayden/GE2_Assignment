@@ -15,7 +15,7 @@ GAME.Pursuer = function(){
     };
 
     this.updateBehaviours = function(delta){
-        pursue.update(delta);
+        that.applyForce(pursue.update(delta));
     };
 
 };

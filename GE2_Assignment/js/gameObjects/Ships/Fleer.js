@@ -8,6 +8,11 @@ GAME.Fleer = function(){
     var flee = new GAME.Flee(this);
     flee.fleeDistance = 180;
 
+    var seek = new GAME.Seek(this);
+    seek.setTarget(THREE.Vector3.ZERO);
+
+    var force;
+
     this.maxSpeed = 50;
 
     this.setTarget = function(target){
@@ -15,7 +20,20 @@ GAME.Fleer = function(){
     };
 
     this.updateBehaviours = function(delta){
-        flee.update(delta);
+
+        force = flee.update(delta);
+
+        if(force.length() > 0) {
+            that.applyForce(force);
+            seek.targetReached = false;
+        }
+        else if(!seek.targetReached) {
+            that.applyForce(seek.update(delta));
+        }
+        else if(seek.targetReached){
+            if(seek.update(delta).length() < 1)
+                that.velocity.set(0,0,0);
+        }
     };
 
 };

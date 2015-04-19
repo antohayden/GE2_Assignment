@@ -3,7 +3,7 @@ GAME.Alignment_Scene = function(assetManager, gameObjects, scene, camera){
 
     var path = new GAME.Path();
     var points = path.createCirclularPath(100, 300, new THREE.Vector3(0,0,-400));
-    camera.position.set(0,0,200);
+    camera.position.set(0,0,500);
 
     for(var i = 0; i < 100; i++) {
 
@@ -17,7 +17,7 @@ GAME.Alignment_Scene = function(assetManager, gameObjects, scene, camera){
 
 
     var s2 = new GAME.Alignment_example();
-    s2.maxSpeed = 60;
+    s2.maxSpeed = 120;
     s2.mesh = assetManager.createShipMesh();
     s2.setPosition(new THREE.Vector3(0,0,-400));
     s2.setGameObjects(gameObjects);

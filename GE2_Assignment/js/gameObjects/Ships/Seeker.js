@@ -16,12 +16,12 @@ GAME.Seeker = function(){
         pathFollow.setPath(_path);
     };
 
-    this.maxSpeed = 60;
+    this.maxSpeed = 120;
 
     this.updateBehaviours = function(delta){
 
         if(!seek.targetReached)
-            seek.update(delta);
+            that.applyForce(seek.update(delta));
 
         else if(that.followPath)
             seek.setTarget(pathFollow.getNextPathTarget());

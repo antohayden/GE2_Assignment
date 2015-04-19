@@ -22,11 +22,12 @@ GAME.Seek = function(gameObject){
 
         if(desiredVelocity.length() < (gameObject.maxSpeed / 50) ) {
             that.targetReached = true;
+            return THREE.Vector3.ZERO;
         }else{
 
             desiredVelocity.normalize();
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
-            gameObject.velocity.copy(desiredVelocity);
+            return desiredVelocity.sub(gameObject.velocity);
         }
     };
 

@@ -7,6 +7,7 @@ GAME.Controls = function(cameraController){
     var moveRight = false;
 
     var velocity = new THREE.Vector3();
+    var multFactor = 1;
 
     var onKeyDown = function ( event ) {
 
@@ -29,6 +30,10 @@ GAME.Controls = function(cameraController){
             case 39: // right
             case 68: // d
                 moveRight = true;
+                break;
+
+            case 16: //shift
+                multFactor = 5;
                 break;
         }
 
@@ -58,6 +63,10 @@ GAME.Controls = function(cameraController){
                 moveRight = false;
                 break;
 
+            case 16: //shift
+                multFactor = 1;
+                break;
+
         }
 
     };
@@ -80,8 +89,8 @@ GAME.Controls = function(cameraController){
         if ( moveLeft ) velocity.x -= 400.0 * delta;
         if ( moveRight ) velocity.x += 400.0 * delta;
 
-        cameraController.getObject().translateX( velocity.x * delta );
-        cameraController.getObject().translateZ( velocity.z * delta );
+        cameraController.getObject().translateX( velocity.x * delta * multFactor);
+        cameraController.getObject().translateZ( velocity.z * delta  * multFactor);
 
     }
 

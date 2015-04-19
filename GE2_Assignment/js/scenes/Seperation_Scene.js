@@ -1,8 +1,10 @@
 
-GAME.Separation_Scene = function(assetManager, gameObjects, scene){
+GAME.Separation_Scene = function(assetManager, gameObjects, scene, camera){
 
     var path = new GAME.Path();
     var points = path.createCirclularPath(10, 100, new THREE.Vector3(0,0,-300));
+
+    camera.position.set(0,0,300);
 
     for(var i = 0; i < 10; i++) {
 
@@ -21,7 +23,7 @@ GAME.Separation_Scene = function(assetManager, gameObjects, scene){
     s2.mesh = assetManager.createShipMesh();
     s2.setPosition(new THREE.Vector3(0, 0, -300));
     s2.setGameObjects(gameObjects);
-    s2.setNeighbourhoodRadius(100);
+    s2.setNeighbourhoodRadius(300);
     s2.showRadius(scene, 0x00ff00);
     s2.logIt = true;
     scene.add(s2.mesh);

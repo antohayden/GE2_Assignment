@@ -9,6 +9,7 @@ GAME.ArriveAndSeek = function(assetManager, gameObjects, scene){
     path.drawPath(scene, 0x0000FF);
 
     var seeker = new GAME.Seeker();
+    seeker.maxSpeed = 120;
     seeker.mesh = assetManager.createShipMesh();
     seeker.setPosition(new THREE.Vector3(0,0,0));
     seeker.setPath(path);
@@ -18,6 +19,7 @@ GAME.ArriveAndSeek = function(assetManager, gameObjects, scene){
     gameObjects.push(seeker);
 
     var arriver = new GAME.Arriver();
+    arriver.maxSpeed = 120;
     arriver.mesh = assetManager.createShipMesh();
     arriver.setPosition(new THREE.Vector3(0,0,0));
     arriver.setPath(path);

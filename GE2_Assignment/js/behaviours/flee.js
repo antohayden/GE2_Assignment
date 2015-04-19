@@ -24,12 +24,11 @@ GAME.Flee = function(gameObject){
 
         if(desiredVelocity.length() > that.fleeDistance) {
             that.fleeDistanceReached = true;
-            gameObject.velocity.set(0,0,0);
-
+            return THREE.Vector3.ZERO;
         }else{
             desiredVelocity.normalize();
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
-            gameObject.velocity.copy(desiredVelocity);
+           return desiredVelocity.sub(gameObject.velocity);
         }
     };
 

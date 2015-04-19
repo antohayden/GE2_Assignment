@@ -75,7 +75,7 @@ GAME.Wander = function(gameObject){
         setWanderTarget();
 
         seek.setTarget(target);
-        seek.update(delta);
+        return(seek.update(delta));
     };
 
 };

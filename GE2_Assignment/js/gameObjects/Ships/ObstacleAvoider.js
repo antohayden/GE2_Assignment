@@ -40,12 +40,13 @@ GAME.ObstacleAvoider = function(){
     this.updateBehaviours = function(delta){
 
         if(!seek.targetReached)
-            seek.update(delta);
+            that.applyForce(seek.update(delta));
 
         else if(that.followPath)
             seek.setTarget(pathFollow.getNextPathTarget());
 
-        OA.update(delta);
+        that.applyForce(OA.update(delta));
+
         var p = OA.getIntersectionPoint();
         if(p)
             intersectionPoint.position.copy(p);

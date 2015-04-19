@@ -11,7 +11,7 @@ GAME.Arrive = function(gameObject){
 
     var speed, distance;
 
-    this.decelerationFactor = 0.9;
+    this.decelerationFactor = 2;
 
     this.setTarget = function(v){
         that.targetReached = false;
@@ -31,11 +31,9 @@ GAME.Arrive = function(gameObject){
 
             speed = distance / that.decelerationFactor;
             speed = Math.min(speed, gameObject.maxSpeed);
-            if(speed < 1)
-                speed = 1;
 
             desiredVelocity.multiplyScalar(speed).divideScalar(distance);
-            gameObject.velocity.copy(desiredVelocity);
+            return desiredVelocity.sub(gameObject.velocity);
         }
 
     };

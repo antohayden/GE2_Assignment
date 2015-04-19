@@ -10,8 +10,6 @@ GAME.Separation = function(gameObject){
 
     function setSteeringForce(neighbours){
 
-        steeringForce.set(0,0,0);
-
         var len = neighbours.length;
         var pos = gameObject.getPosition();
         var dirLength;

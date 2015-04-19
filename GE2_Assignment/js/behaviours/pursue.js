@@ -26,7 +26,7 @@ GAME.Pursue = function(gameObject){
         targetVector.add(targetObject.velocity.clone().multiplyScalar(lookAhead));
 
         seek.setTarget(targetVector);
-        seek.update(delta);
+        return(seek.update(delta));
     };
 
 };

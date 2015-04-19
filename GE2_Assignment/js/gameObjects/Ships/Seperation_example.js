@@ -8,6 +8,7 @@ GAME.Separator_example = function(){
 
     var wander = new GAME.Wander(this);
     var separation = new GAME.Separation(this);
+
     var nearestNeighbours = new GAME.NearestNeighbours(this);
     var rad, radiusSphere;
 
@@ -32,13 +33,14 @@ GAME.Separator_example = function(){
 
     this.updateBehaviours = function(delta){
 
-        var f = separation.update(nearestNeighbours.update());
+        var n = nearestNeighbours.update();
 
-        if(f.length() > 0) {
-            that.applyForce(f.multiplyScalar(that.maxSpeed));
+        if(n.length > 0) {
+            var f = separation.update(n);
+            that.applyForce(f);
         }
         else {
-            wander.update(delta);
+            that.applyForce(wander.update(delta));
         }
 
         if(radiusSphere) {

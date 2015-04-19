@@ -46,7 +46,7 @@ GAME.PlaneAvoidance = function(gameObject){
             }
             if (closestPoint) {
                 var overShoot = feelers[i].clone().sub(closestPoint);
-                steeringForce.add(planes[closestWallIndex].normal.clone().multiplyScalar(overShoot.length() * gameObject.velocity.length()));
+                steeringForce.add(planes[closestWallIndex].normal.clone().multiplyScalar(overShoot.length()));
             }
 
         }
@@ -97,7 +97,7 @@ GAME.PlaneAvoidance = function(gameObject){
     this.update = function(delta){
 
         that.createFeelers();
-        gameObject.applyForce(calculateSteeringForce());
+        return calculateSteeringForce();
 
     }
 

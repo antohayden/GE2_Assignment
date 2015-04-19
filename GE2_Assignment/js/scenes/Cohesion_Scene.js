@@ -17,7 +17,7 @@ GAME.Cohesion_Scene = function(assetManager, gameObjects, scene, camera){
 
 
     var s2 = new GAME.Cohesion_example();
-    s2.maxSpeed = 60;
+    s2.maxSpeed = 120;
     s2.mesh = assetManager.createShipMesh();
     s2.setPosition(new THREE.Vector3(0,0,-400));
     s2.setGameObjects(gameObjects);

@@ -21,7 +21,7 @@ GAME.Arriver = function(){
     this.updateBehaviours = function(delta){
 
         if(!arrive.targetReached)
-            arrive.update(delta);
+            that.applyForce(arrive.update(delta));
 
         else if(pathFollow.followPath)
             arrive.setTarget(pathFollow.getNextPathTarget());

@@ -38,7 +38,7 @@ GAME.OffsetPursuit = function(gameObject){
         target.add(leader.velocity.clone().multiplyScalar(lookAhead));
 
         arrive.setTarget(target);
-        arrive.update(delta);
+        return (arrive.update(delta));
     };
 
 };

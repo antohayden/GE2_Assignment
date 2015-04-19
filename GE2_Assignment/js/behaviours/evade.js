@@ -32,7 +32,7 @@ GAME.Evade = function(gameObject){
         targetVector.add(targetObject.velocity.clone().multiplyScalar(lookAhead));
 
         flee.setTarget(targetVector);
-        flee.update(delta);
+        return(flee.update(delta));
     };
 
 };

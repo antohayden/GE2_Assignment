@@ -15,7 +15,7 @@ GAME.Wanderer = function(){
     this.maxSpeed = 70;
 
     this.updateBehaviours = function(delta){
-        wander.update(delta);
+        that.applyForce(wander.update(delta));
     };
 
 };

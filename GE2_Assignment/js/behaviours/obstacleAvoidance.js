@@ -168,7 +168,10 @@ GAME.ObstacleAvoidance = function(gameObject){
         }
 
         if(closestObstacle){
-            gameObject.applyForce(calculateSteeringForce(closestObstacle));
+            return calculateSteeringForce(closestObstacle);
+        }
+        else {
+            return THREE.Vector3.ZERO;
         }
 
     };

@@ -10,7 +10,7 @@ GAME.OffsetPursuit_Scene = function(assetManager, gameObjects, scene){
     path.setPoints(path.createCirclularPath(6, 300, new THREE.Vector3(0,0,-500)));
     path.drawPath(scene, 0x0000FF);
 
-    var leader = new GAME.Seeker();
+    var leader = new GAME.Arriver();
     leader.mesh = assetManager.createShipMesh();
     leader.setPosition(new THREE.Vector3(0,0,0));
     leader.setPath(path);
