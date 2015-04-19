@@ -27,8 +27,12 @@ GAME.Cohesion = function(gameObject){
 
     this.update = function(neighbours,delta){
 
-        setCenterOfMassTarget(neighbours);
-        return(seek.update(delta));
+        if(neighbours.length !== 0)
+            setCenterOfMassTarget(neighbours);
+
+        var v = seek.update(delta);
+
+        return(v);
     };
 
 };

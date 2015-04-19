@@ -66,9 +66,7 @@ GAME.Controls = function(cameraController){
             case 16: //shift
                 multFactor = 1;
                 break;
-
         }
-
     };
 
     init();

@@ -11,6 +11,12 @@ GAME.Separation = function(gameObject){
     function setSteeringForce(neighbours){
 
         var len = neighbours.length;
+        steeringForce.set(0,0,0);
+
+        if(len === 0){
+            return steeringForce;
+        }
+
         var pos = gameObject.getPosition();
         var dirLength;
 
@@ -20,8 +26,10 @@ GAME.Separation = function(gameObject){
             toNeighbour.subVectors(pos, neighbours[i].getPosition());
 
             dirLength = toNeighbour.length();
-            steeringForce.add(toNeighbour.normalize().divideScalar(dirLength));
+            toNeighbour.normalize().multiplyScalar(1 / dirLength);
+            steeringForce.add(toNeighbour);
         };
+
 
         return steeringForce;
 

@@ -22,6 +22,7 @@ GAME.GameObject = function(){
         that.mesh.quaternion.copy(that.rotation);
     };
 
+    this.maxForce = 10000;
     this.rotation = new THREE.Quaternion();
     this.rotationSpeed = 2;
     this.look = new THREE.Vector3(0,0,-1);
@@ -51,6 +52,7 @@ GAME.GameObject = function(){
         that.updateBehaviours(delta);
 
         acceleration = force.divideScalar(mass);
+
         that.velocity.add(acceleration.multiplyScalar(delta));
         that.speed = that.velocity.length();
 

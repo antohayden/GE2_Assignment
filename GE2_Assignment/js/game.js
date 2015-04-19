@@ -51,7 +51,8 @@ GAME = function(){
                 //demo = new GAME.PlaneAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Separation_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Cohesion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                demo = new GAME.Alignment_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Alignment_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.Flocking_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 loaded = true;
             });
 
