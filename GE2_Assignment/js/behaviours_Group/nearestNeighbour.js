@@ -10,13 +10,13 @@ GAME.NearestNeighbours = function(gameObject){
     var gameObjects = [];
     var neighbours;
 
-    function inRange(position, gameObject){
+    function inRange(position, _gameObject){
 
         var adjustedRadius =
-            gameObject.mesh.geometry.boundingSphere.radius +
+            _gameObject.mesh.geometry.boundingSphere.radius +
             neighborhoodRadius;
 
-        if(position.distanceTo(gameObject.getPosition()) <= neighborhoodRadius)
+        if(position.distanceTo(_gameObject.getPosition()) <= neighborhoodRadius)
             return true;
         else
             return false;
@@ -31,8 +31,10 @@ GAME.NearestNeighbours = function(gameObject){
         for(var i = 0; i < l; i++){
 
             //object in range and is object checked against
-            if(inRange(pos, gameObjects[i]) && gameObjects[i] != gameObject)
+            if(inRange(pos, gameObjects[i]) && gameObjects[i] != gameObject){
                 neighbours.push(gameObjects[i]);
+            }
+
         };
 
         return neighbours;

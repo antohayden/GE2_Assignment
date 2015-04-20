@@ -17,16 +17,16 @@ GAME.Flocking = function(gameObject){
 
         planeAvoidance : 1,
         obstacleAvoidance : 1,
-        separation : 1200,
-        cohesion : 9,
-        alignment : 10,
+        separation : 10000,
+        cohesion : 3,
+        alignment : 2,
         pursue : 1,
         seek : 1,
         flee : 1,
         evade : 1,
         arrive : 1,
         offsetPursuit : 1,
-        wander : 30
+        wander : 5
     };
 
     function accumulateForce(runningTotal, force){
@@ -113,6 +113,7 @@ GAME.Flocking = function(gameObject){
 
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
             }
+
         }
 
         return steeringForce;

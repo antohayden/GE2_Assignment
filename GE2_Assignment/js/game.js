@@ -52,7 +52,9 @@ GAME = function(){
                 //demo = new GAME.Separation_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Cohesion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Alignment_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                demo = new GAME.Flocking_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Flocking_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Lazer_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.Explosion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 loaded = true;
             });
 
@@ -75,8 +77,13 @@ GAME = function(){
             controls.update(delta);
 
             if(loaded) {
-                for(var i in gameObjects)
+                for(var i in gameObjects) {
                     gameObjects[i].update(delta);
+
+                    if(!gameObjects[i].isAlive){
+                        gameObjects.splice(i,1);
+                    }
+                }
             }
 
         }

@@ -33,7 +33,7 @@ GAME.Controls = function(cameraController){
                 break;
 
             case 16: //shift
-                multFactor = 5;
+                multFactor = 20;
                 break;
         }
 
@@ -64,7 +64,7 @@ GAME.Controls = function(cameraController){
                 break;
 
             case 16: //shift
-                multFactor = 1;
+                multFactor = 5;
                 break;
         }
     };

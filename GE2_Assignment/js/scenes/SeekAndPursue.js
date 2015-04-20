@@ -14,6 +14,7 @@ GAME.SeekAndPursue = function(assetManager, gameObjects, scene){
     gameObjects.push(seeker);
 
     var pursuer = new GAME.Pursuer();
+    pursuer.maxSpeed = 70;
     pursuer.mesh = assetManager.createShipMesh();
     pursuer.setPosition(new THREE.Vector3(0,0,0));
     pursuer.setTargetObject(seeker);
