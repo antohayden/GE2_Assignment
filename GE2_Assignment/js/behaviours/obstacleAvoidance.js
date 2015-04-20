@@ -51,13 +51,13 @@ GAME.ObstacleAvoidance = function(gameObject){
         //    steeringForce.y *= -1;
 
         //apply braking proportional to the obstacles distance
-        var brakingWeight = 0.4;
+        var brakingWeight = 0.8;
         steeringForce.z = (expandedRadius - closestObstacleLocalPosition.z) * brakingWeight;
 
         //convert to world space
         steeringForce.applyMatrix4(gameObject.mesh.matrixWorld);
         steeringForce.normalize();
-        steeringForce.multiplyScalar(gameObject.maxSpeed * gameObject.maxSpeed);
+        steeringForce.multiplyScalar(gameObject.maxSpeed);
 
         return steeringForce;
 
@@ -172,6 +172,7 @@ GAME.ObstacleAvoidance = function(gameObject){
         }
         else {
             return THREE.Vector3.ZERO;
+            console.log("returning zero");
         }
 
     };

@@ -19,12 +19,9 @@ GAME = function(){
 
         function init(){
 
-            camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+            camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 40000 );
 
             scene = new THREE.Scene();
-            var light = new THREE.AmbientLight( 0xBBBBBB);
-            light.position.set( 0,300,0 );
-            scene.add( light );
 
             cameraController = new THREE.PointerLockControls( camera );
             cameraController.getObject().position.set(0,0,0);
@@ -53,10 +50,15 @@ GAME = function(){
                 //demo = new GAME.Cohesion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Alignment_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Flocking_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                //demo = new GAME.Lazer_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                demo = new GAME.Explosion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.Lazer_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Explosion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Assignment_Scene(assetManager, gameObjects, scene, camera);
                 loaded = true;
             });
+
+            var light = new THREE.AmbientLight( 0xBBBBBB);
+            light.position.set( 0,300,0 );
+            scene.add( light );
 
             window.addEventListener( 'resize', onWindowResize, false );
         }
@@ -77,6 +79,7 @@ GAME = function(){
             controls.update(delta);
 
             if(loaded) {
+
                 for(var i in gameObjects) {
                     gameObjects[i].update(delta);
 
@@ -84,8 +87,10 @@ GAME = function(){
                         gameObjects.splice(i,1);
                     }
                 }
-            }
 
+                if(demo.update)
+                    demo.update(delta);
+            }
         }
 
         function animate() {

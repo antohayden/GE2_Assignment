@@ -20,4 +20,4 @@ GAME.Wanderer = function(){
 
 };
 
-GAME.Pursuer.prototype = Object.create(GAME.GameObject);
+GAME.Wanderer.prototype = Object.create(GAME.GameObject);

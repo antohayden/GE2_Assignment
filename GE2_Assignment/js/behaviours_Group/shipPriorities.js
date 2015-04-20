@@ -1,25 +1,32 @@
 /*
-* Weight Truncated Running Sum with Prioritization for Flocking
-*
-* Given a gameObject's set of behaviours, produce a force decided through
-* a prioritisation system (order in array list given)
-* */
+ * Weight Truncated Running Sum with Prioritization for ships
+ *
+ * Given a gameObject's set of behaviours, produce a force decided through
+ * a prioritisation system
+ * */
 
+GAME.ShipPriorities = function(gameObject){
 
-GAME.Flocking = function(gameObject){
-
-    var that = this;
     var steeringForce = new THREE.Vector3();
     var force = new THREE.Vector3();
     var nearestNeighbours = new GAME.NearestNeighbours(gameObject);
+    var currentNeighbours;
+    var enemies;
+    var allies;
 
     var multipliers = {
-        planeAvoidance : 1,
-        obstacleAvoidance : 1,
+        planeAvoidance : 10,
+        obstacleAvoidance : 100,
         separation : 5000,
-        cohesion : 5,
+        cohesion : 1,
         alignment : 2,
-        wander : 6
+        pursue : 1,
+        seek : 1,
+        flee : 1,
+        evade : 1,
+        arrive : 1,
+        offsetPursuit : 1,
+        wander : 5
     };
 
     function accumulateForce(runningTotal, force){
@@ -31,7 +38,6 @@ GAME.Flocking = function(gameObject){
         if(remaining <= 0){
             return false;
         }
-
         var toAdd = force.length();
 
         if(toAdd < remaining){
@@ -52,9 +58,24 @@ GAME.Flocking = function(gameObject){
         nearestNeighbours.setGameObjects(_gameObjects);
     };
 
-    this.calculate = function(delta){
+    this.updateNearestNeighbours  = function(){
+        currentNeighbours = nearestNeighbours.update();
+        return currentNeighbours;
+    };
 
-        var n = nearestNeighbours.update();
+    this.setNeighbours = function(_neighbours){
+        currentNeighbours = _neighbours;
+    };
+
+    this.setAllies = function(_allies){
+        allies = _allies;
+    };
+
+    this.setEnemies = function(_enemies){
+        enemies = _enemies;
+    };
+
+    this.calculate = function(delta){
 
         steeringForce.set(0,0,0);
         force.set(0,0,0);
@@ -78,21 +99,21 @@ GAME.Flocking = function(gameObject){
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Separation){
-                force = gameObject.behaviours[i].update(n);
+                force = gameObject.behaviours[i].update(currentNeighbours);
                 force.multiplyScalar(multipliers.separation);
 
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Cohesion){
-                force = gameObject.behaviours[i].update(n, delta);
+                force = gameObject.behaviours[i].update(allies, delta);
                 force.multiplyScalar(multipliers.cohesion);
 
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Alignment){
-                force = gameObject.behaviours[i].update(n);
+                force = gameObject.behaviours[i].update(allies);
                 force.multiplyScalar(multipliers.alignment);
 
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
@@ -105,6 +126,40 @@ GAME.Flocking = function(gameObject){
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
             }
 
+            if(gameObject.behaviours[i] instanceof GAME.Flee){
+                force = gameObject.behaviours[i].update(delta);
+                force.multiplyScalar(multipliers.flee);
+
+                if(!accumulateForce(steeringForce, force)) return steeringForce;
+            }
+
+            if(gameObject.behaviours[i] instanceof GAME.Seek){
+                force = gameObject.behaviours[i].update(delta);
+                force.multiplyScalar(multipliers.wander);
+
+                if(!accumulateForce(steeringForce, force)) return steeringForce;
+            }
+
+            if(gameObject.behaviours[i] instanceof GAME.Evade){
+                force = gameObject.behaviours[i].update(delta);
+                force.multiplyScalar(multipliers.evade);
+
+                if(!accumulateForce(steeringForce, force)) return steeringForce;
+            }
+
+            if(gameObject.behaviours[i] instanceof GAME.OffsetPursuit){
+                force = gameObject.behaviours[i].update(delta);
+                force.multiplyScalar(multipliers.offsetPursuit);
+
+                if(!accumulateForce(steeringForce, force)) return steeringForce;
+            }
+
+            if(gameObject.behaviours[i] instanceof GAME.Pursue){
+                force = gameObject.behaviours[i].update(delta);
+                force.multiplyScalar(multipliers.pursue);
+
+                if(!accumulateForce(steeringForce, force)) return steeringForce;
+            }
         }
 
         return steeringForce;

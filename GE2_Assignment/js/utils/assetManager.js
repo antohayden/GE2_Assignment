@@ -29,7 +29,7 @@ GAME.AssetManager = function(){
     function init(){
         ml = models.length;
         tl = textures.length;
-        loadTotal = ml + tl;
+        loadTotal = ml + tl + 1;
 
         loadShipGeometries();
         loadShipTextures();
@@ -79,6 +79,7 @@ GAME.AssetManager = function(){
         var materialTotal = textures.length;
 
         for(var i = 0; i < materialTotal; i++){
+
             textureLoader.load(textures[i].path, function(texture){
                 shipMaterials.push(createShipMaterials(texture));
                 checkLoaded();
@@ -100,17 +101,47 @@ GAME.AssetManager = function(){
     /*
      * API
      * */
-    //create ship using random loaded material and mesh
-
-    this.createShipMesh = function(){
+    //create ship using random loaded material and mesh if not provided
 
 
-        var mesh = new THREE.Mesh(
-            shipGeoms[Math.floor(Math.random() * shipGeoms.length)],
-            shipMaterials[Math.floor(Math.random() * shipMaterials.length)]
-        );
-        return mesh;
+    this.rockTexture  = THREE.ImageUtils.loadTexture('Assets/textures/Rock.jpg', {}, function() {
+        checkLoaded();
+    });
+
+    this.createShipMesh = function(model, color){
+
+        var geometry, material;
+
+        if(!model)
+            geometry = shipGeoms[Math.floor(Math.random() * shipGeoms.length)];
+        else{
+            for(var i in shipGeoms){
+                if(models[i].type === model){
+                    geometry = shipGeoms[i];
+                    break;
+                }
+            }
+            if(!geometry)
+                geometry = shipGeoms[Math.floor(Math.random() * shipGeoms.length)];
+        };
+
+
+        if(!color)
+            material = shipMaterials[Math.floor(Math.random() * shipMaterials.length)];
+        else{
+            for(var j in shipMaterials){
+                if(textures[j].type === color){
+                    material = shipMaterials[j];
+                    break;
+                }
+            }
+            if(!material)
+                material = shipMaterials[Math.floor(Math.random() * shipGeoms.length)];
+        };
+
+        return new THREE.Mesh(geometry, material);
     };
+
 
 
 

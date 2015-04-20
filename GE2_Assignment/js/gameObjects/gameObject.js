@@ -7,7 +7,7 @@ GAME.GameObject = function(){
     var desiredRotation = new THREE.Quaternion();
 
     var force = new THREE.Vector3();
-    var mass = 1;
+    var mass = 2;
     var acceleration = new THREE.Vector3();
 
     function setDesiredRotation(){
@@ -22,9 +22,12 @@ GAME.GameObject = function(){
         that.mesh.quaternion.copy(that.rotation);
     };
 
-    this.maxForce = 10000;
+    this.behaviours = [];
+    this.objectName = "";
+    this.health = 10;
+    this.maxForce = 500;
     this.rotation = new THREE.Quaternion();
-    this.rotationSpeed = 2;
+    this.rotationSpeed = 0.5;
     this.look = new THREE.Vector3(0,0,-1);
     this.up = new THREE.Vector3(0,1,0);
     this.right = new THREE.Vector3(1,0,0);
@@ -71,14 +74,9 @@ GAME.GameObject = function(){
         updateRotation();
 
         force.set(0,0,0);
+
     };
 
     this.updateBehaviours = function(){};
-
-
-
-
-
-
 
 };

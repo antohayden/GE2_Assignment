@@ -18,14 +18,16 @@ GAME.Pursue = function(gameObject){
 
     this.update = function(delta){
 
-        direction.subVectors(targetObject.getPosition(), gameObject.getPosition());
-        distance = direction.length();
+        if(targetObject) {
+            direction.subVectors(targetObject.getPosition(), gameObject.getPosition());
+            distance = direction.length();
 
-        lookAhead = (distance / gameObject.maxSpeed);
-        targetVector.copy(targetObject.getPosition());
-        targetVector.add(targetObject.velocity.clone().multiplyScalar(lookAhead));
+            lookAhead = (distance / gameObject.maxSpeed);
+            targetVector.copy(targetObject.getPosition());
+            targetVector.add(targetObject.velocity.clone().multiplyScalar(lookAhead));
 
-        seek.setTarget(targetVector);
+            seek.setTarget(targetVector);
+        }
         return(seek.update(delta));
     };
 

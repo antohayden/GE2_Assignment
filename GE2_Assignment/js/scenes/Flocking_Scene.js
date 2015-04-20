@@ -1,7 +1,6 @@
 
 GAME.Flocking_Scene = function(assetManager, gameObjects, scene, camera){
 
-    var path = new GAME.Path();
     var numShips = 200;
     camera.position.set(0,0,300);
 

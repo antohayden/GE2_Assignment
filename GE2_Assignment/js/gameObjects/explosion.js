@@ -1,6 +1,6 @@
 
 /*
-* Simple explosion
+* Simple explosion (low performance)
 * given a position, create a number of small cubes and explode in random directions
 * */
 

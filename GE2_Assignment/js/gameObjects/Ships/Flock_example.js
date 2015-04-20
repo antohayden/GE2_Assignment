@@ -6,17 +6,18 @@ GAME.Flock_example = function(){
 
     GAME.GameObject.call(this);
 
-    var flocking = new GAME.Flocking(this);
 
     var separation = new GAME.Separation(this);
     var cohesion = new GAME.Cohesion(this);
     var alignment = new GAME.Alignment(this);
     var wander = new GAME.Wander(this);
 
-    flocking.behaviours.push(separation);
-    flocking.behaviours.push(cohesion);
-    flocking.behaviours.push(alignment);
-    flocking.behaviours.push(wander);
+    this.behaviours.push(separation);
+    this.behaviours.push(cohesion);
+    this.behaviours.push(alignment);
+    this.behaviours.push(wander);
+
+    var flocking = new GAME.Flocking(this);
 
     this.setRadius = function(val) {
         flocking.setNeighbourhoodRadius(val);

@@ -27,7 +27,7 @@ GAME.Flee = function(gameObject){
             return THREE.Vector3.ZERO;
         }else{
             desiredVelocity.normalize();
-            desiredVelocity.multiplyScalar(gameObject.maxSpeed);
+            desiredVelocity.multiplyScalar(gameObject.maxSpeed * 1.1);
            return desiredVelocity.sub(gameObject.velocity);
         }
     };

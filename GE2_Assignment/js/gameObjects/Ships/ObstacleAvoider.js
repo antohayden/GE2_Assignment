@@ -6,7 +6,7 @@ GAME.ObstacleAvoider = function(){
 
     GAME.GameObject.call(this);
 
-    var seek = new GAME.Seek(this);
+    var arrive = new GAME.Arrive(this);
     var OA = new GAME.ObstacleAvoidance(this);
     var pathFollow = new GAME.PathFollow(this);
 
@@ -39,11 +39,11 @@ GAME.ObstacleAvoider = function(){
 
     this.updateBehaviours = function(delta){
 
-        if(!seek.targetReached)
-            that.applyForce(seek.update(delta));
+        if(!arrive.targetReached)
+            that.applyForce(arrive.update(delta));
 
         else if(that.followPath)
-            seek.setTarget(pathFollow.getNextPathTarget());
+            arrive.setTarget(pathFollow.getNextPathTarget());
 
         that.applyForce(OA.update(delta));
 
