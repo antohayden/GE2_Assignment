@@ -50,9 +50,9 @@ GAME = function(){
                 //demo = new GAME.Cohesion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Alignment_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Flocking_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                demo = new GAME.Lazer_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Lazer_Scene(assetManager, gameObjects, scene, cameraController.getObject());
                 //demo = new GAME.Explosion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
-                //demo = new GAME.Assignment_Scene(assetManager, gameObjects, scene, camera);
+                demo = new GAME.Assignment_Scene(assetManager, gameObjects, scene, camera);
                 loaded = true;
             });
 
