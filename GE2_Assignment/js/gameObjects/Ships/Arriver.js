@@ -20,8 +20,10 @@ GAME.Arriver = function(){
 
     this.updateBehaviours = function(delta){
 
-        if(!arrive.targetReached)
-            that.applyForce(arrive.update(delta));
+        if(!arrive.targetReached) {
+            var f  = arrive.update(delta);
+            that.applyForce(f);
+        }
 
         else if(pathFollow.followPath)
             arrive.setTarget(pathFollow.getNextPathTarget());

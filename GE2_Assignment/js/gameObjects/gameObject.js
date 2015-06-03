@@ -7,7 +7,7 @@ GAME.GameObject = function(){
     var desiredRotation = new THREE.Quaternion();
 
     var force = new THREE.Vector3();
-    var mass = 2;
+    var mass = 5;
     var acceleration = new THREE.Vector3();
 
     function setDesiredRotation(){
@@ -25,7 +25,7 @@ GAME.GameObject = function(){
     this.behaviours = [];
     this.objectName = "";
     this.health = 10;
-    this.maxForce = 500;
+    this.maxForce = 100;
     this.rotation = new THREE.Quaternion();
     this.rotationSpeed = 0.5;
     this.look = new THREE.Vector3(0,0,-1);
@@ -48,7 +48,13 @@ GAME.GameObject = function(){
     };
 
     this.applyForce = function(v){
-        force.add(v);
+        try {
+            force.add(v);
+        }catch(Exception){
+            console.log("oops");
+            console.log(force);
+            console.log(v);
+        }
     };
 
     this.update = function(delta){
