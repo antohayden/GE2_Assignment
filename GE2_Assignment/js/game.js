@@ -68,6 +68,10 @@ GAME = function(){
 
                 scene = new THREE.Scene();
                 scene.add( cameraController.getObject() );
+
+                var light = new THREE.AmbientLight( 0xBBBBBB);
+                light.position.set( 0,300,0 );
+                scene.add( light );
             };
 
             $(document).on("assetsLoaded", function(){
@@ -230,9 +234,7 @@ GAME = function(){
                 loaded = true;
             });
 
-            var light = new THREE.AmbientLight( 0xBBBBBB);
-            light.position.set( 0,300,0 );
-            scene.add( light );
+
 
             window.addEventListener( 'resize', onWindowResize, false );
         }
