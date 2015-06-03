@@ -5,6 +5,7 @@ GAME.Controls = function(cameraController){
     var moveBackward = false;
     var moveLeft = false;
     var moveRight = false;
+    var mousedown = false;
 
     var velocity = new THREE.Vector3();
     var multFactor = 1;
@@ -78,17 +79,17 @@ GAME.Controls = function(cameraController){
 
     this.update = function(delta){
 
-        velocity.x -= velocity.x * 10.0 * delta;
-        velocity.z -= velocity.z * 10.0 * delta;
+            velocity.x -= velocity.x * 10.0 * delta;
+            velocity.z -= velocity.z * 10.0 * delta;
 
-        if ( moveForward ) velocity.z -= 400.0 * delta;
-        if ( moveBackward ) velocity.z += 400.0 * delta;
+            if (moveForward) velocity.z -= 400.0 * delta;
+            if (moveBackward) velocity.z += 400.0 * delta;
 
-        if ( moveLeft ) velocity.x -= 400.0 * delta;
-        if ( moveRight ) velocity.x += 400.0 * delta;
+            if (moveLeft) velocity.x -= 400.0 * delta;
+            if (moveRight) velocity.x += 400.0 * delta;
 
-        cameraController.getObject().translateX( velocity.x * delta * multFactor);
-        cameraController.getObject().translateZ( velocity.z * delta  * multFactor);
+            cameraController.getObject().translateX(velocity.x * delta * multFactor);
+            cameraController.getObject().translateZ(velocity.z * delta * multFactor);
 
     }
 

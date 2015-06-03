@@ -5,6 +5,7 @@
 THREE.PointerLockControls = function ( camera ) {
 
 	var scope = this;
+	var mousedown = false;
 
 	camera.rotation.set( 0, 0, 0 );
 
@@ -19,19 +20,37 @@ THREE.PointerLockControls = function ( camera ) {
 
 	var onMouseMove = function ( event ) {
 
-		if ( scope.enabled === false ) return;
+		if(mousedown) {
+			if (scope.enabled === false) return;
 
-		var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
-		var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+			var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+			var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
 
-		yawObject.rotation.y -= movementX * 0.002;
-		pitchObject.rotation.x -= movementY * 0.002;
+			yawObject.rotation.y -= movementX * 0.002;
+			pitchObject.rotation.x -= movementY * 0.002;
 
-		pitchObject.rotation.x = Math.max( - PI_2, Math.min( PI_2, pitchObject.rotation.x ) );
-
+			pitchObject.rotation.x = Math.max(-PI_2, Math.min(PI_2, pitchObject.rotation.x));
+		}
 	};
 
 	document.addEventListener( 'mousemove', onMouseMove, false );
+
+
+	$('html').mousedown(function(event) {
+		switch (event.which) {
+			case 1:
+				mousedown = true;
+				break;
+		}
+	});
+
+	$('html').mouseup(function(event) {
+		switch (event.which) {
+			case 1:
+				mousedown = false;
+				break;
+		}
+	});
 
 	this.enabled = false;
 
