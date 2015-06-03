@@ -1,5 +1,5 @@
 /*
- *Given a leader gameObject, maintain a relative position given by offset
+ * Given a leader gameObject, maintain a relative position given by offset
  * local to the leader gameObject
  * */
 

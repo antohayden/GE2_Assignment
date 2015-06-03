@@ -1,7 +1,7 @@
 
 GAME.MultiWander = function(assetManager, gameObjects, scene){
 
-    for(var i = 0; i < 300; i++) {
+    for(var i = 0; i < 10; i++) {
         var wanderer = new GAME.Wanderer(scene);
         wanderer.maxSpeed = 150;
         wanderer.mesh = assetManager.createShipMesh();
