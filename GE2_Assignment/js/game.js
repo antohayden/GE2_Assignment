@@ -75,6 +75,7 @@ GAME = function(){
             };
 
             $(document).on("assetsLoaded", function(){
+<<<<<<< HEAD
 
                 var gui = new dat.GUI();
                 var folder = gui.addFolder('Scenes');
@@ -231,6 +232,23 @@ GAME = function(){
                     }
                 } );
 
+=======
+                //demo = new GAME.SeekAndFlee(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.ArriveAndSeek(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.SeekAndPursue(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.SeekAndEvade(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.MultiWander(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.OffsetPursuit_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.ObstacleAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.PlaneAvoidance_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Separation_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Cohesion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Alignment_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Flocking_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Lazer_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                //demo = new GAME.Explosion_Scene(assetManager, gameObjects, scene, cameraController.getObject());
+                demo = new GAME.Assignment_Scene(assetManager, gameObjects, scene, camera);
+>>>>>>> origin/master
                 loaded = true;
             });
 
