@@ -13,7 +13,7 @@ GAME.Fleer = function(){
 
     var force;
 
-    this.maxSpeed = 50;
+    this.maxSpeed = 40;
 
     this.setTarget = function(target){
         flee.setTarget(target);

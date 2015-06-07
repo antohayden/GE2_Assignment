@@ -18,7 +18,7 @@ GAME.Lazer_example = function(gameObjects, scene){
         pathFollow.setPath(_path);
     };
 
-    this.maxSpeed = 120;
+    this.maxSpeed = 60;
 
     this.updateBehaviours = function(delta){
 

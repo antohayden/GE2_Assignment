@@ -113,7 +113,7 @@ GAME.Assignment_Ship = function(){
         obstacleAvoidance.setObstacles( obstaclesArray );
     };
 
-    this.maxSpeed = 60;
+    this.maxSpeed = 40;
 
     this.setTarget = function(v){
         seek.setTarget(v);

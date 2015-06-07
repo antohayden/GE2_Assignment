@@ -16,7 +16,7 @@ GAME.Arriver = function(){
         pathFollow.followPath = bool;
     };
 
-    this.maxSpeed = 60;
+    this.maxSpeed = 40;
 
     this.updateBehaviours = function(delta){
 
@@ -25,8 +25,9 @@ GAME.Arriver = function(){
             that.applyForce(f);
         }
 
-        else if(pathFollow.followPath)
+        else if(pathFollow.followPath) {
             arrive.setTarget(pathFollow.getNextPathTarget());
+        }
     };
 
 };

@@ -16,10 +16,10 @@ GAME.Flocking = function(gameObject){
     var multipliers = {
         planeAvoidance : 1,
         obstacleAvoidance : 1,
-        separation : 5000,
-        cohesion : 5,
-        alignment : 2,
-        wander : 6
+        separation : 1,
+        cohesion :1,
+        alignment : 1,
+        wander : 1
     };
 
     function accumulateForce(runningTotal, force){
@@ -77,13 +77,6 @@ GAME.Flocking = function(gameObject){
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
             }
 
-            if(gameObject.behaviours[i] instanceof GAME.Separation){
-                force = gameObject.behaviours[i].update(n);
-                force.multiplyScalar(multipliers.separation);
-
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
-            }
-
             if(gameObject.behaviours[i] instanceof GAME.Cohesion){
                 force = gameObject.behaviours[i].update(n, delta);
                 force.multiplyScalar(multipliers.cohesion);
@@ -94,6 +87,13 @@ GAME.Flocking = function(gameObject){
             if(gameObject.behaviours[i] instanceof GAME.Alignment){
                 force = gameObject.behaviours[i].update(n);
                 force.multiplyScalar(multipliers.alignment);
+
+                if(!accumulateForce(steeringForce, force)) return steeringForce;
+            }
+
+            if(gameObject.behaviours[i] instanceof GAME.Separation){
+                force = gameObject.behaviours[i].update(n);
+                force.multiplyScalar(multipliers.separation);
 
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
             }

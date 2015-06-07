@@ -11,26 +11,25 @@ GAME.Separation = function(gameObject){
     function setSteeringForce(neighbours){
 
         var len = neighbours.length;
-        steeringForce.set(0,0,0);
 
         if(len === 0){
-            return steeringForce;
+            steeringForce.set(0,0,0);
         }
+        else{
+            var pos = gameObject.getPosition();
+            var dirLength;
 
-        var pos = gameObject.getPosition();
-        var dirLength;
+            steeringForce.set(0,0,0);
 
-        for(var i = 0; i < len; i++){
+            for(var i = 0; i < len; i++){
+                toNeighbour.set(0,0,0);
+                toNeighbour.subVectors(pos, neighbours[i].getPosition());
 
-            toNeighbour.set(0,0,0);
-            toNeighbour.subVectors(pos, neighbours[i].getPosition());
-
-            dirLength = toNeighbour.length();
-            toNeighbour.normalize().multiplyScalar(1 / dirLength);
-            steeringForce.add(toNeighbour);
-        };
-
-
+                dirLength = toNeighbour.length();
+                toNeighbour.normalize().multiplyScalar(0.1 *  dirLength);
+                steeringForce.add(toNeighbour);
+            };
+        }
         return steeringForce;
 
     };

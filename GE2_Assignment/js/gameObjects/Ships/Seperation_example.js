@@ -29,7 +29,7 @@ GAME.Separator_example = function(){
         nearestNeighbours.setGameObjects(_gameObjects);
     };
 
-    this.maxSpeed = 70;
+    this.maxSpeed = 40;
 
     this.updateBehaviours = function(delta){
 

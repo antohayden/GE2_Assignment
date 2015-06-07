@@ -16,7 +16,7 @@ GAME.Seeker = function(){
         pathFollow.setPath(_path);
     };
 
-    this.maxSpeed = 70;
+    this.maxSpeed = 40;
 
     this.updateBehaviours = function(delta){
 

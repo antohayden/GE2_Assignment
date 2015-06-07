@@ -27,7 +27,7 @@ GAME.Flock_example = function(){
         flocking.setGameObjects(gameObjects);
     };
 
-    this.maxSpeed = 120;
+    this.maxSpeed = 60;
 
     this.updateBehaviours = function(delta){
 

@@ -12,7 +12,7 @@ GAME.Wanderer = function(){
         wander.addTargetObjects(scene);
     };
 
-    this.maxSpeed = 70;
+    this.maxSpeed = 40;
 
     this.updateBehaviours = function(delta){
         that.applyForce(wander.update(delta));

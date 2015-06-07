@@ -7,7 +7,7 @@ GAME.GameObject = function(){
     var desiredRotation = new THREE.Quaternion();
 
     var force = new THREE.Vector3();
-    var mass = 5;
+    var mass = 1;
     var acceleration = new THREE.Vector3();
 
     function setDesiredRotation(){
@@ -51,9 +51,7 @@ GAME.GameObject = function(){
         try {
             force.add(v);
         }catch(Exception){
-            console.log("oops");
-            console.log(force);
-            console.log(v);
+            console.error("Problem adding force");
         }
     };
 

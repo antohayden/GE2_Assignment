@@ -26,7 +26,7 @@ GAME.ObstacleAvoider = function(){
         pathFollow.setPath(_path);
     };
 
-    this.maxSpeed = 80;
+    this.maxSpeed = 40;
 
     this.setIntersectionObject = function(scene){
         var g = new THREE.CubeGeometry(3,3,3);

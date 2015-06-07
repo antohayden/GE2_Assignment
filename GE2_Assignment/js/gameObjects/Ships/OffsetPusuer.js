@@ -9,7 +9,7 @@ GAME.OffsetPursuer = function(){
     var offsetPursuit = new GAME.OffsetPursuit(this);
 
 
-    this.maxSpeed = 100;
+    this.maxSpeed = 50;
 
     this.setOffset = function(vec){
         offsetPursuit.setOffset(vec);

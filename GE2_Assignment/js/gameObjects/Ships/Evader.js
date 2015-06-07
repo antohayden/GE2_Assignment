@@ -14,7 +14,7 @@ GAME.Evader = function(){
 
     var force;
 
-    this.maxSpeed = 100;
+    this.maxSpeed = 40;
 
     this.setTargetObject = function(targetObject){
         evade.setTargetObject(targetObject);
