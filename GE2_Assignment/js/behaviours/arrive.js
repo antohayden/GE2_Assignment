@@ -39,6 +39,8 @@ GAME.Arrive = function(gameObject){
         }
         return desiredVelocity.sub(gameObject.velocity);
 
+
+
     };
 
 };

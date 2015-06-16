@@ -7,7 +7,7 @@ GAME.GameObject = function(){
     var desiredRotation = new THREE.Quaternion();
 
     var force = new THREE.Vector3();
-    var mass = 1;
+    var mass = 5;
     var acceleration = new THREE.Vector3();
 
     function setDesiredRotation(){
@@ -61,7 +61,7 @@ GAME.GameObject = function(){
 
         acceleration = force.divideScalar(mass);
 
-        that.velocity.add(acceleration.multiplyScalar(delta));
+        that.velocity.add(acceleration.multiplyScalar(delta * mass));
         that.speed = that.velocity.length();
 
         if(that.speed > that.maxSpeed){
@@ -71,6 +71,7 @@ GAME.GameObject = function(){
         }
 
         position.add(that.velocity.clone().multiplyScalar(delta));
+
         that.mesh.position.copy(position);
 
         setDesiredRotation();
