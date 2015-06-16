@@ -34,6 +34,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="flocking.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/behaviours_Group/flocking.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.28428093" vertical-offset="51" max-vertical-offset="2023">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gameObject.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/gameObjects/gameObject.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="evade.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="evade.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/behaviours/evade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47380155" vertical-offset="0" max-vertical-offset="897">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
@@ -115,11 +127,11 @@
         <option value="$PROJECT_DIR$/js/scenes/ObstacleAvoidance_Scene.js" />
         <option value="$PROJECT_DIR$/js/behaviours_Group/seperation.js" />
         <option value="$PROJECT_DIR$/js/scenes/Flocking_Scene.js" />
-        <option value="$PROJECT_DIR$/js/behaviours_Group/flocking.js" />
         <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/gameObjects/gameObject.js" />
         <option value="$PROJECT_DIR$/js/scenes/SeekAndEvade.js" />
         <option value="$PROJECT_DIR$/js/behaviours/arrive.js" />
+        <option value="$PROJECT_DIR$/js/behaviours_Group/flocking.js" />
       </list>
     </option>
   </component>
@@ -220,6 +232,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gameObjects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GE2_Assignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GE2_Assignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behaviours_Group" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -738,16 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/behaviours_Group/flocking.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="2023">
-          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.392858" vertical-offset="3462" max-vertical-offset="4777">
@@ -782,9 +802,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/behaviours/evade.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47380155" vertical-offset="0" max-vertical-offset="897">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/behaviours_Group/flocking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28428093" vertical-offset="51" max-vertical-offset="2023">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

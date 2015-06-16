@@ -16,7 +16,7 @@ GAME.Flocking = function(gameObject){
     var multipliers = {
         planeAvoidance : 1,
         obstacleAvoidance : 1,
-        separation : 1,
+        separation : 2,
         cohesion :1,
         alignment : 1,
         wander : 1
