@@ -15,9 +15,9 @@ GAME.ShipPriorities = function(gameObject){
     var allies;
 
     var multipliers = {
-        planeAvoidance : 10,
-        obstacleAvoidance : 100,
-        separation : 5000,
+        planeAvoidance : 1,
+        obstacleAvoidance : 1000,
+        separation : 1,
         cohesion : 1,
         alignment : 2,
         pursue : 1,
@@ -26,7 +26,7 @@ GAME.ShipPriorities = function(gameObject){
         evade : 1,
         arrive : 1,
         offsetPursuit : 1,
-        wander : 5
+        wander : 1
     };
 
     function accumulateForce(runningTotal, force){
@@ -45,7 +45,7 @@ GAME.ShipPriorities = function(gameObject){
         }
         //clone required????
         else{
-            runningTotal.add(force.clone().normalize().multiplyScalar(remaining));
+            runningTotal.add(force.normalize().multiplyScalar(remaining));
         }
         return true;
     };
@@ -94,6 +94,7 @@ GAME.ShipPriorities = function(gameObject){
             if(gameObject.behaviours[i] instanceof GAME.ObstacleAvoidance){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.obstacleAvoidance);
+
 
                 if(!accumulateForce(steeringForce, force)) return steeringForce;
             }

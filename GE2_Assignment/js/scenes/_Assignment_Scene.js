@@ -165,34 +165,35 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
 
     this.update = function(delta){
 
-        cameraSwitchTimer += delta;
-        if(cameraSwitchTimer > cameraSwitchDuration) {
+        //cameraSwitchTimer += delta;
 
-            var j = gameObjects.length;
-
-            for (var i = Math.floor(Math.randomBetween(0, j)); i < j; i++) {
-
-                if(i%2 === 0) {
-                    if (gameObjects[i] instanceof GAME.Assignment_Ship) {
-
-                            cameraObject.position.copy(gameObjects[i].getPosition());
-                            camera.position.set(0, 0, 300);
-                            cameraObject.add(camera);
-                            cameraSwitchTimer = 0;
-                            break;
-
-                    }
-                }
-                else{
-                    if (gameObjects[i] instanceof GAME.Assignment_Ship) {
-                            gameObjects[i].mesh.add(camera);
-                            camera.position.add(new THREE.Vector3(0, 100, 100));
-                            cameraSwitchTimer = 0;
-                            break;
-                    }
-                }
-            }
-        }
+        //if(cameraSwitchTimer > cameraSwitchDuration) {
+        //
+        //    var j = gameObjects.length;
+        //
+        //    for (var i = Math.floor(Math.randomBetween(0, j)); i < j; i++) {
+        //
+        //        if(i%2 === 0) {
+        //            if (gameObjects[i] instanceof GAME.Assignment_Ship) {
+        //
+        //                    cameraObject.position.copy(gameObjects[i].getPosition());
+        //                    camera.position.set(0, 0, 300);
+        //                    cameraObject.add(camera);
+        //                    cameraSwitchTimer = 0;
+        //                    break;
+        //
+        //            }
+        //        }
+        //        else{
+        //            if (gameObjects[i] instanceof GAME.Assignment_Ship) {
+        //                    gameObjects[i].mesh.add(camera);
+        //                    camera.position.add(new THREE.Vector3(0, 100, 100));
+        //                    cameraSwitchTimer = 0;
+        //                    break;
+        //            }
+        //        }
+        //    }
+        //}
     }
 
 };
