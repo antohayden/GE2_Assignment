@@ -8,6 +8,7 @@ GAME.Arrive = function(gameObject){
 
     var distance;
     var slowingRadius = 200;
+    var slowingForce = new THREE.Vector3();
 
     this.setTarget = function(v){
         that.targetReached = false;
@@ -30,14 +31,16 @@ GAME.Arrive = function(gameObject){
             desiredVelocity = desiredVelocity.normalize();
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
             desiredVelocity.multiplyScalar(distance / slowingRadius);
+            desiredVelocity.sub(gameObject.velocity).multiplyScalar(gameObject.mass);
         }
         else{
             //outside slowing radius
             desiredVelocity = desiredVelocity.normalize();
             desiredVelocity.multiplyScalar(gameObject.maxSpeed);
+            desiredVelocity.sub(gameObject.velocity)
 
         }
-        return desiredVelocity.sub(gameObject.velocity);
+        return desiredVelocity;
 
 
 
