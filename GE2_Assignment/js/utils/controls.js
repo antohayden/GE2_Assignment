@@ -77,6 +77,8 @@ GAME.Controls = function(cameraController){
         document.addEventListener('keyup', onKeyUp, false);
     }
 
+    var lookVector = new THREE.Vector3(0,0,-1);
+
     this.update = function(delta){
 
             velocity.x -= velocity.x * 10.0 * delta;
@@ -87,6 +89,8 @@ GAME.Controls = function(cameraController){
 
             if (moveLeft) velocity.x -= 400.0 * delta;
             if (moveRight) velocity.x += 400.0 * delta;
+
+
 
             cameraController.getObject().translateX(velocity.x * delta * multFactor);
             cameraController.getObject().translateZ(velocity.z * delta * multFactor);

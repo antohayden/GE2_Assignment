@@ -8,7 +8,7 @@ GAME.ObstacleAvoidance = function(gameObject){
 
     var that = this;
 
-    var minDetectionBoxLength = 100;
+    var minDetectionBoxLength = 200;
     var detectionBoxLength;
 
     var obstaclesInRange;
@@ -24,7 +24,7 @@ GAME.ObstacleAvoidance = function(gameObject){
         var pos = gameObject.getPosition();
 
         for(var i in obstacles){
-            if(pos.distanceTo(obstacles[i].getPosition()) < distance){
+            if(pos.distanceTo(obstacles[i].getPosition()) < ( distance + obstacles[i].mesh.geometry.boundingSphere.radius)){
                 obstaclesInRange.push(obstacles[i]);
             }
         };
@@ -172,7 +172,6 @@ GAME.ObstacleAvoidance = function(gameObject){
         }
         else {
             return THREE.Vector3.ZERO;
-            console.log("returning zero");
         }
 
     };

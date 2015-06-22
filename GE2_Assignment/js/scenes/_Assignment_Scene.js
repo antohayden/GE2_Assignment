@@ -101,15 +101,33 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         var material = new THREE.MeshBasicMaterial( { map: assetManager.rockTexture} );
         var mesh = new THREE.Mesh( geometry, material );
         sphere.mesh = mesh;
-        sphere.setPosition(new THREE.Vector3(Math.randomBetween(-4000, 4000), Math.randomBetween(-4000, 4000), Math.randomBetween(-4000, 4000) ));
+        sphere.setPosition(randomPosition(4000));
 
         scene.add( sphere.mesh );
         obstacles.push(sphere);
     }
 
+
+    /*****************************************************
+     * FUNCTION FOR CHECKING IF SHIPS SPAWN INSIDE OBSTACLES
+     * *****************************************/
+    function isInsideSphere(point, sphere){
+
+        if(point.distanceTo(sphere.getPosition()) <= sphere.mesh.geometry.boundingSphere.radius)
+            return true
+        else
+            return false;
+    }
+
+    function randomPosition(radius){
+        return new THREE.Vector3(Math.randomBetween(-radius, radius), Math.randomBetween(-radius, radius), Math.randomBetween(-radius, radius) );
+    }
+
     /*****************************************************
     * SHIPS
     * *****************************************/
+
+    var randomPos;
 
     for (var i = 0; i < numShips; i++){
 
@@ -132,7 +150,18 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         ship.setRadius(1500);
 
         ship.maxSpeed = 150;
-        ship.setPosition(new THREE.Vector3(Math.randomBetween(-2000, 2000), Math.randomBetween(-2000, 2000), Math.randomBetween(-2000, 2000) ));
+
+        randomPos = randomPosition(2000);
+
+        for(var j = 0; j < obstacles.length; j++){
+
+            if(isInsideSphere(randomPos, obstacles[j])){
+                j = 0;
+                randomPos = randomPosition(2000);
+            }
+        }
+
+        ship.setPosition(randomPos);
 
         scene.add(ship.mesh);
         gameObjects.push(ship);

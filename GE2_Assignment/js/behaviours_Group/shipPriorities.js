@@ -17,7 +17,7 @@ GAME.ShipPriorities = function(gameObject){
     var multipliers = {
         planeAvoidance : 1,
         obstacleAvoidance : 1,
-        separation : 3,
+        separation : 1,
         cohesion : 1,
         alignment : 2,
         pursue : 1,
@@ -26,7 +26,7 @@ GAME.ShipPriorities = function(gameObject){
         evade : 1,
         arrive : 1,
         offsetPursuit : 1,
-        wander : 2
+        wander : 1
     };
 
     function accumulateForce(runningTotal, force){
@@ -88,78 +88,77 @@ GAME.ShipPriorities = function(gameObject){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.planeAvoidance);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.ObstacleAvoidance){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.obstacleAvoidance);
 
-
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Separation){
                 force = gameObject.behaviours[i].update(currentNeighbours);
                 force.multiplyScalar(multipliers.separation);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Cohesion){
                 force = gameObject.behaviours[i].update(allies, delta);
                 force.multiplyScalar(multipliers.cohesion);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Alignment){
                 force = gameObject.behaviours[i].update(allies);
                 force.multiplyScalar(multipliers.alignment);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Wander){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.wander);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Flee){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.flee);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Seek){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.wander);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Evade){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.evade);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.OffsetPursuit){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.offsetPursuit);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
 
             if(gameObject.behaviours[i] instanceof GAME.Pursue){
                 force = gameObject.behaviours[i].update(delta);
                 force.multiplyScalar(multipliers.pursue);
 
-                if(!accumulateForce(steeringForce, force)) return steeringForce;
+                if(!accumulateForce(steeringForce, force)) break;
             }
         }
 
