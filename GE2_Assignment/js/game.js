@@ -72,6 +72,7 @@ GAME = function(){
                 var light = new THREE.AmbientLight( 0xBBBBBB);
                 light.position.set( 0,300,0 );
                 scene.add( light );
+                cameraController.getObject().position.set(0,0,0);
             };
 
             $(document).on("assetsLoaded", function(){
