@@ -12,7 +12,6 @@ GAME.IdleState = function(gameObject){
         gameObject.behaviours.push(gameObject.behavioursList.separation);
         gameObject.behaviours.push(gameObject.behavioursList.cohesion);
         gameObject.behaviours.push(gameObject.behavioursList.alignment);
-        gameObject.maxSpeed = 250;
     };
 
     this.exit = function(){

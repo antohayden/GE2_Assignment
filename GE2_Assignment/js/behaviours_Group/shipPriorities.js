@@ -16,8 +16,8 @@ GAME.ShipPriorities = function(gameObject){
 
     var multipliers = {
         planeAvoidance : 1,
-        obstacleAvoidance : 1000,
-        separation : 1,
+        obstacleAvoidance : 1,
+        separation : 3,
         cohesion : 1,
         alignment : 2,
         pursue : 1,
@@ -26,7 +26,7 @@ GAME.ShipPriorities = function(gameObject){
         evade : 1,
         arrive : 1,
         offsetPursuit : 1,
-        wander : 1
+        wander : 2
     };
 
     function accumulateForce(runningTotal, force){

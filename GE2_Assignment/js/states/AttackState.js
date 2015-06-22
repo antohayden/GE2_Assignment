@@ -17,7 +17,6 @@ GAME.AttackState = function(gameObject){
         gameObject.behaviours.push(gameObject.behavioursList.cohesion);
         gameObject.behaviours.push(gameObject.behavioursList.alignment);
         gameObject.setTargetObject(currentTarget);
-        gameObject.maxSpeed = 275;
     };
 
     this.exit = function(){
