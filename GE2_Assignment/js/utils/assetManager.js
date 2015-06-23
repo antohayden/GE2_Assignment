@@ -17,25 +17,49 @@ GAME.AssetManager = function(){
         {type: "Blue", path: "Assets/textures/Blue.png"},
     ];
 
-    var ml, tl, loadTotal, loaded = 0;
+    var asteroidModels = [
+
+        {type: "1", path: "Assets/models/asteroid.json"},
+        {type: "1", path: "Assets/models/asteroid2.json"},
+        {type: "1", path: "Assets/models/asteroid3.json"}
+    ];
+
+    var asteroidTextures = [
+
+        {type: "1", path: "Assets/textures/Rock.jpg"},
+        {type: "1", path: "Assets/textures/Rock2.jpg"},
+        {type: "1", path: "Assets/textures/Rock3.jpg"}
+
+    ];
+
+    var loadTotal, loaded = 0;
 
     var jsonLoader = new THREE.JSONLoader();
     var textureLoader = new THREE.TextureLoader();
 
-    var shipGeoms = [], shipMaterials = [];
+    var shipGeoms = [],
+        shipMaterials = [],
+        asteroidGeoms = [],
+        asteroidMaterials = [];
 
     init();
 
     function init(){
-        ml = models.length;
-        tl = textures.length;
-        loadTotal = ml + tl + 1;
+
+        loadTotal =
+        + models.length
+        + textures.length
+        + asteroidModels.length
+        + asteroidTextures.length;
 
         loadShipGeometries();
         loadShipTextures();
+        loadAsteroidGeometries();
+        loadAsteroidTextures();
     };
 
     function createGlassMaterial(){
+
         var glass = new THREE.MeshPhongMaterial({
             opacity: 0.9,
             transparent: true,
@@ -44,22 +68,6 @@ GAME.AssetManager = function(){
         });
 
         return glass;
-    };
-
-    function createShipMaterials(texture){
-
-        var materials = [];
-
-        var shellMaterial = new THREE.MeshPhongMaterial({
-            map: texture,
-            metal: true
-        });
-
-        materials.push(shellMaterial);
-        materials.push(createGlassMaterial());
-
-        return new THREE.MeshFaceMaterial(materials);
-
     };
 
     function loadShipGeometries(){
@@ -87,6 +95,55 @@ GAME.AssetManager = function(){
         }
     };
 
+    function loadAsteroidTextures(){
+
+        var materialTotal = asteroidTextures.length;
+
+        for(var i = 0; i < materialTotal; i++){
+
+            textureLoader.load(asteroidTextures[i].path, function(texture){
+                asteroidMaterials.push(createAsteroidMaterials(texture));
+                checkLoaded();
+            });
+        }
+    };
+
+    function createShipMaterials(texture){
+
+        var materials = [];
+
+        var shellMaterial = new THREE.MeshPhongMaterial({
+            map: texture,
+            metal: true
+        });
+
+        materials.push(shellMaterial);
+        materials.push(createGlassMaterial());
+
+        return new THREE.MeshFaceMaterial(materials);
+
+    };
+
+    function loadAsteroidGeometries(){
+
+        var asteroidLength = asteroidModels.length;
+
+        for(var i = 0; i < asteroidLength; i++){
+            jsonLoader.load(asteroidModels[i].path, function(geometry){
+                asteroidGeoms.push(geometry);
+                checkLoaded();
+            });
+        }
+    }
+
+    function createAsteroidMaterials(texture){
+
+        return new THREE.MeshBasicMaterial({
+            map : texture
+        });
+
+    };
+
     function checkLoaded(){
 
         loaded ++;
@@ -102,11 +159,6 @@ GAME.AssetManager = function(){
      * API
      * */
     //create ship using random loaded material and mesh if not provided
-
-
-    this.rockTexture  = THREE.ImageUtils.loadTexture('Assets/textures/Rock.jpg', {}, function() {
-        checkLoaded();
-    });
 
     this.createShipMesh = function(model, color){
 
@@ -140,6 +192,15 @@ GAME.AssetManager = function(){
         };
 
         return new THREE.Mesh(geometry, material);
+    };
+
+    this.createAsteroid = function(scale){
+
+        var geometry = asteroidGeoms[Math.floor(Math.random() * asteroidGeoms.length)];
+        var material = asteroidMaterials[Math.floor(Math.random() * asteroidMaterials.length)];
+        var m = new THREE.Mesh(geometry, material);
+        m.scale.set(scale, scale, scale);
+        return m;
     };
 
 

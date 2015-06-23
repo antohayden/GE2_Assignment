@@ -17,8 +17,8 @@ GAME.Flocking = function(gameObject){
         planeAvoidance : 1,
         obstacleAvoidance : 1,
         separation : 2,
-        cohesion :1,
-        alignment : 1,
+        cohesion :4,
+        alignment : 2,
         wander : 1
     };
 

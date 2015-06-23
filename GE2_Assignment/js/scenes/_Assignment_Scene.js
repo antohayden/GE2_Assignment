@@ -91,20 +91,17 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
      * ********************************/
 
     var obstacles = [];
-    var numObstacles = 15;
+    var numObstacles = 30;
 
     for (var i = 0; i < numObstacles; i++){
 
-        var sphere = new GAME.GameObject();
+        var ob = new GAME.GameObject();
+        var scale = Math.randomBetween(5,50);
+        ob.mesh = assetManager.createAsteroid(scale);
+        ob.setPosition(randomPosition(4000));
 
-        var geometry = new THREE.SphereGeometry( Math.floor(Math.randomBetween( 500, 1000)),32,32);
-        var material = new THREE.MeshBasicMaterial( { map: assetManager.rockTexture} );
-        var mesh = new THREE.Mesh( geometry, material );
-        sphere.mesh = mesh;
-        sphere.setPosition(randomPosition(4000));
-
-        scene.add( sphere.mesh );
-        obstacles.push(sphere);
+        scene.add( ob.mesh );
+        obstacles.push(ob);
     }
 
 
@@ -114,7 +111,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
     function isInsideSphere(point, sphere){
 
         if(point.distanceTo(sphere.getPosition()) <= sphere.mesh.geometry.boundingSphere.radius)
-            return true
+            return true;
         else
             return false;
     }
@@ -129,7 +126,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
 
     var randomPos;
 
-    for (var i = 0; i < numShips; i++){
+    for (var j = 0; j < numShips; j++){
 
         var ship = new GAME.Assignment_Ship();
         ship.scene = scene;
@@ -138,7 +135,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         ship.setObstacles(obstacles);
         ship.maxSpeed = 150;
 
-        if(i%2 === 0) {
+        if(j%2 === 0) {
             ship.objectName = "A";
             ship.mesh = assetManager.createShipMesh(null, "Red");
         }
@@ -153,10 +150,10 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
 
         randomPos = randomPosition(2000);
 
-        for(var j = 0; j < obstacles.length; j++){
+        for(var k = 0; k < obstacles.length; k++){
 
-            if(isInsideSphere(randomPos, obstacles[j])){
-                j = 0;
+            if(isInsideSphere(randomPos, obstacles[k])){
+                k = 0;
                 randomPos = randomPosition(2000);
             }
         }
@@ -171,7 +168,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
     * Stars in scene
     * ***********************************************************/
 
-    for(var i = 0; i < 500; i++){
+    for(var l = 0; l < 500; l++){
         var size = Math.floor(Math.randomBetween( 1, 5));
         var geometry = new THREE.BoxGeometry(size,size,size);
         var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
@@ -185,9 +182,9 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         mesh.position.copy(direction);
         scene.add(mesh);
 
-        if(i % 20 === 0) {
+        if(l % 20 === 0) {
             var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-            directionalLight.position.copy(direction)
+            directionalLight.position.copy(direction);
             scene.add(directionalLight);
         }
     }
