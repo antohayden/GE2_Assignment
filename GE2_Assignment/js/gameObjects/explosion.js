@@ -31,6 +31,7 @@ GAME.Explosion = function(position, scene) {
     }
 
     this.isAlive = true;
+    this.collidable = false;
 
     this.update = function(delta){
 

@@ -138,7 +138,7 @@ GAME.AssetManager = function(){
 
     function createAsteroidMaterials(texture){
 
-        return new THREE.MeshBasicMaterial({
+        return new THREE.MeshLambertMaterial({
             map : texture
         });
 
@@ -155,9 +155,6 @@ GAME.AssetManager = function(){
         }
     };
 
-    /*
-     * API
-     * */
     //create ship using random loaded material and mesh if not provided
 
     this.createShipMesh = function(model, color){

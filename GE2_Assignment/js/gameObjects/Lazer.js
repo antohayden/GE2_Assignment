@@ -13,7 +13,7 @@
      var currentPosition = gameObject.getPosition().clone();
      var speed = 1100;
      var dissipateDistance = 1000;
-     var thickness = 8, length = 50;
+     var thickness = 2, length = 50;
 
      var rectShape = new THREE.Shape();
      rectShape.moveTo( 0, 0 );

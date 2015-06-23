@@ -79,6 +79,7 @@ GAME.Assignment_Ship = function(){
     this.neighbourAllies = [];
     this.nearestEnemy = undefined;
     this.nearestEnemyDist = undefined;
+    this.light = new THREE.PointLight( 0xffffff, 20, 100 );
 
     this.behavioursList = {
         arrive: arrive,
@@ -128,6 +129,8 @@ GAME.Assignment_Ship = function(){
 
     this.updateBehaviours = function(delta){
 
+        this.light.position.copy(that.getPosition());
+        this.light.position.y += 20;
         sortNeighbours();
         that.stateMachine.update(delta);
         that.applyForce(priorities.calculate(delta));

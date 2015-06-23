@@ -173,6 +173,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         ship.setPosition(randomPos);
 
         scene.add(ship.mesh);
+        scene.add(ship.light);
         gameObjects.push(ship);
     }
 
@@ -194,12 +195,13 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         mesh.position.copy(direction);
         scene.add(mesh);
 
-        if(l % 20 === 0) {
+        if(l % 100 === 0) {
             var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
             directionalLight.position.copy(direction);
             scene.add(directionalLight);
         }
     }
+
 
     this.update = function(delta){
 

@@ -30,7 +30,7 @@ GAME.NearestNeighbours = function(gameObject){
 
         for(var i = 0; i < l; i++){
 
-            if(!(gameObjects[i] instanceof GAME.Explosion)){
+            if(gameObjects[i].collidable){
                 //object in range and is object checked against
                 if (inRange(pos, gameObjects[i]) && gameObjects[i] != gameObject) {
                     neighbours.push(gameObjects[i]);

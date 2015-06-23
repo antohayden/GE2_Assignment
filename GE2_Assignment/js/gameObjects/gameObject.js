@@ -35,6 +35,7 @@ GAME.GameObject = function(){
     this.maxSpeed = 5;
     this.velocity = new THREE.Vector3();
     this.isAlive = true;
+    this.collidable = true;
 
     this.mesh = undefined;
 
