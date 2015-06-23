@@ -202,7 +202,6 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         }
     }
 
-
     this.update = function(delta){
 
         //cameraSwitchTimer += delta;

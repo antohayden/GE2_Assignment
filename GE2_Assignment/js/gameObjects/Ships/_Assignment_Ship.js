@@ -79,7 +79,7 @@ GAME.Assignment_Ship = function(){
     this.neighbourAllies = [];
     this.nearestEnemy = undefined;
     this.nearestEnemyDist = undefined;
-    this.light = new THREE.PointLight( 0xffffff, 20, 100 );
+    this.light = new THREE.PointLight( 0xffffff, 10, 50 );
 
     this.behavioursList = {
         arrive: arrive,

@@ -16,11 +16,24 @@ GAME.EvadeState = function(gameObject){
         gameObject.behaviours.push(gameObject.behavioursList.cohesion);
         gameObject.behaviours.push(gameObject.behavioursList.alignment);
         gameObject.behaviours.push(gameObject.behavioursList.wander);
-        gameObject.maxSpeed = 125; //make evading a little faster
+        gameObject.maxSpeed = 90; //make evading a little faster
         gameObject.setTargetObject(currentTarget);
     };
 
     this.exit = function(){
+
+    };
+
+
+    function checkIfInFront(){
+
+        var heading = gameObject.nearestEnemy.getPosition().clone().sub(gameObject.getPosition());
+        var dot = gameObject.look.clone().dot(heading);
+
+        if(dot >= 0)
+            return true;
+        else
+            return false;
 
     };
 
@@ -36,8 +49,9 @@ GAME.EvadeState = function(gameObject){
             currentTarget = gameObject.nearestEnemy;
             gameObject.setTargetObject(currentTarget);
         }
-
-        if(gameObject.nearestEnemy && (gameObject.health >= gameObject.nearestEnemy.health))
+        else if(    gameObject.nearestEnemy
+                &&  gameObject.health >= gameObject.nearestEnemy.health
+                &&  checkIfInFront())
         {
             gameObject.stateMachine.switchState(new GAME.AttackState(gameObject));
         }

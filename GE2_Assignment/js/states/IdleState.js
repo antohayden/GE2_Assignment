@@ -12,9 +12,22 @@ GAME.IdleState = function(gameObject){
         gameObject.behaviours.push(gameObject.behavioursList.separation);
         gameObject.behaviours.push(gameObject.behavioursList.cohesion);
         gameObject.behaviours.push(gameObject.behavioursList.alignment);
+        gameObject.maxSpeed = 80;
     };
 
     this.exit = function(){
+
+    };
+
+    function checkIfInFront(){
+
+        var heading = gameObject.nearestEnemy.getPosition().clone().sub(gameObject.getPosition());
+        var dot = gameObject.look.clone().dot(heading);
+
+        if(dot >= 0)
+            return true;
+        else
+            return false;
 
     };
 
@@ -25,7 +38,10 @@ GAME.IdleState = function(gameObject){
         }
 
         if(gameObject.nearestEnemy){
-            if(gameObject.nearestEnemy && (gameObject.health >= gameObject.nearestEnemy.health)){
+            if(     gameObject.nearestEnemy
+                &&  gameObject.health >= gameObject.nearestEnemy.health
+                &&  checkIfInFront()
+            ){
                 gameObject.stateMachine.switchState(new GAME.AttackState(gameObject));
             }
             else {
