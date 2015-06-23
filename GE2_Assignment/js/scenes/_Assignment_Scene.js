@@ -93,7 +93,6 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
     var obstacles = [];
     var numObstacles = 200;
     var forceCap = 10;
-    var axis = 10;
 
     for (var i = 0; i < numObstacles; i++){
 
@@ -109,7 +108,6 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         gameObjects.push(ob);
 
         ob.force = new THREE.Vector3(Math.randomBetween(-forceCap,forceCap),Math.randomBetween(-forceCap,forceCap),Math.randomBetween(-forceCap,forceCap));
-        ob.randomAxis =  new THREE.Vector3(Math.randomBetween(-axis,axis),Math.randomBetween(-axis,axis),Math.randomBetween(-axis,axis));
         ob.rotationSpeed = Math.randomBetween(1, 50);
 
         ob.updateBehaviours = function(delta){
