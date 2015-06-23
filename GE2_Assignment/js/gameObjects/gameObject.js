@@ -78,7 +78,7 @@ GAME.GameObject = function(){
         that.rotation.slerp(desiredRotation, (that.rotationSpeed * delta));
         updateRotation();
 
-        //force.set(0,0,0);
+        force.set(0,0,0);
 
     };
 
