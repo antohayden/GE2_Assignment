@@ -26,5 +26,9 @@ GAME.Alignment_Scene = function(assetManager, gameObjects, scene, camera){
     scene.add(s2.mesh);
     gameObjects.push(s2);
 
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 2 );
+    directionalLight.position.set( 0, 100, 0 );
+    scene.add( directionalLight );
+
 };
 

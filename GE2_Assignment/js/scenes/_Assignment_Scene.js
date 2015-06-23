@@ -195,7 +195,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         scene.add(mesh);
 
         if(l % 20 === 0) {
-            var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
             directionalLight.position.copy(direction);
             scene.add(directionalLight);
         }

@@ -24,4 +24,8 @@ GAME.SeekAndEvade = function(assetManager, gameObjects, scene){
     scene.add(evader.mesh);
     gameObjects.push(evader);
 
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
+    directionalLight.position.set( 0, 100, 0 );
+    scene.add( directionalLight );
+
 };

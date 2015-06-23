@@ -21,4 +21,8 @@ GAME.SeekAndFlee = function(assetManager, gameObjects, scene){
     scene.add(fleer.mesh);
     gameObjects.push(fleer);
 
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
+    directionalLight.position.set( 0, 100, 0 );
+    scene.add( directionalLight );
+
 };

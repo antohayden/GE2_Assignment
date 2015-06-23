@@ -70,6 +70,10 @@ GAME.OffsetPursuit_Scene = function(assetManager, gameObjects, scene){
         return positions;
     };
 
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
+    directionalLight.position.set( 0, 100, 0 );
+    scene.add( directionalLight );
+
 };
 
 

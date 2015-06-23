@@ -14,4 +14,8 @@ GAME.Lazer_Scene = function(assetManager, gameObjects, scene){
     scene.add(lazer_example.mesh);
     gameObjects.push(lazer_example);
 
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 3 );
+    directionalLight.position.set( 0, 100, 0 );
+    scene.add( directionalLight );
+
 };
