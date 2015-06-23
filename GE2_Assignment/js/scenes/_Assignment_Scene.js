@@ -91,13 +91,14 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
      * ********************************/
 
     var obstacles = [];
-    var numObstacles = 30;
-    var forceCap = 0.1;
+    var numObstacles = 200;
+    var forceCap = 10;
+    var axis = 10;
 
     for (var i = 0; i < numObstacles; i++){
 
         var ob = new GAME.GameObject();
-        var scale = Math.randomBetween(5,50);
+        var scale = Math.randomBetween(1,50);
         ob.mesh = assetManager.createAsteroid(scale);
         ob.setPosition(randomPosition(4000));
         ob.mass = 50;
@@ -107,9 +108,13 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
         obstacles.push(ob);
         gameObjects.push(ob);
 
-        var force = new THREE.Vector3(Math.randomBetween(-forceCap,forceCap),Math.randomBetween(-forceCap,forceCap),Math.randomBetween(-forceCap,forceCap));
+        ob.force = new THREE.Vector3(Math.randomBetween(-forceCap,forceCap),Math.randomBetween(-forceCap,forceCap),Math.randomBetween(-forceCap,forceCap));
+        ob.randomAxis =  new THREE.Vector3(Math.randomBetween(-axis,axis),Math.randomBetween(-axis,axis),Math.randomBetween(-axis,axis));
+        ob.rotationSpeed = Math.randomBetween(1, 50);
+
         ob.updateBehaviours = function(delta){
-            this.applyForce(force);
+            this.rotationSpeed = 0.01;
+            this.applyForce(this.force);
         };
     }
 

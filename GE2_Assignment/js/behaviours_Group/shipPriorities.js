@@ -16,7 +16,7 @@ GAME.ShipPriorities = function(gameObject){
 
     var multipliers = {
         planeAvoidance : 1,
-        obstacleAvoidance : 1,
+        obstacleAvoidance : 10,
         separation : 1,
         cohesion : 1,
         alignment : 2,
