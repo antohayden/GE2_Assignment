@@ -8,6 +8,7 @@ GAME.Controls = function(cameraController){
     var mousedown = false;
 
     var velocity = new THREE.Vector3();
+    var speed = 20;
     var multFactor = 1;
 
     var onKeyDown = function ( event ) {
@@ -34,7 +35,7 @@ GAME.Controls = function(cameraController){
                 break;
 
             case 16: //shift
-                multFactor = 20;
+                multFactor = 10;
                 break;
         }
 
@@ -65,7 +66,7 @@ GAME.Controls = function(cameraController){
                 break;
 
             case 16: //shift
-                multFactor = 5;
+                multFactor = 1;
                 break;
         }
     };
@@ -77,23 +78,34 @@ GAME.Controls = function(cameraController){
         document.addEventListener('keyup', onKeyUp, false);
     }
 
-    var lookVector = new THREE.Vector3(0,0,-1);
+    var baseLookVector = new THREE.Vector3(0,0,-1);
+    var baseUpVector = new THREE.Vector3(0,1,0);
+    var look = new THREE.Vector3();
+    var right = new THREE.Vector3();
 
     this.update = function(delta){
 
-            velocity.x -= velocity.x * 10.0 * delta;
-            velocity.z -= velocity.z * 10.0 * delta;
+        look = cameraController.getDirection(baseLookVector);
+        right = look.clone().cross(baseUpVector);
 
-            if (moveForward) velocity.z -= 400.0 * delta;
-            if (moveBackward) velocity.z += 400.0 * delta;
+        if (moveForward){
+            cameraController.getObject().position.add(look.clone().multiplyScalar(multFactor * speed * delta));
+        }
+        if (moveBackward){
+            cameraController.getObject().position.add(look.clone().negate().multiplyScalar(multFactor * speed * delta));
+        }
+        if (moveRight){
+            cameraController.getObject().position.add(right.clone().multiplyScalar(multFactor * speed * delta));
+        }
+        if (moveLeft){
+            cameraController.getObject().position.add(right.clone().negate().multiplyScalar(multFactor * speed * delta));
+        }
 
-            if (moveLeft) velocity.x -= 400.0 * delta;
-            if (moveRight) velocity.x += 400.0 * delta;
+        //direction = lookVector.clone().applyQuaternion(cameraController.getObject().quaternion);
 
-
-
-            cameraController.getObject().translateX(velocity.x * delta * multFactor);
-            cameraController.getObject().translateZ(velocity.z * delta * multFactor);
+        //cameraController.getObject().translateX(velocity.x * delta * multFactor);
+        //cameraController.getObject().translateZ(velocity.z * delta * multFactor);
+        //cameraController.getObject().position.add(direction);
 
     }
 

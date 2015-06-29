@@ -3,7 +3,7 @@
 GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
 
 
-    var numShips = 50;
+    var numShips = 200;
     var cameraSwitchTimer = 0;
     var cameraSwitchDuration = 5;
     var cameraObject = new THREE.Object3D();
