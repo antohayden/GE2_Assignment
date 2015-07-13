@@ -16,7 +16,7 @@ GAME.EvadeState = function(gameObject){
         gameObject.behaviours.push(gameObject.behavioursList.cohesion);
         gameObject.behaviours.push(gameObject.behavioursList.alignment);
         gameObject.behaviours.push(gameObject.behavioursList.wander);
-        gameObject.maxSpeed = 90; //make evading a little faster
+        gameObject.maxSpeed = 200; //make evading a little faster
         gameObject.setTargetObject(currentTarget);
     };
 

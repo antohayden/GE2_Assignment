@@ -24,7 +24,13 @@ GAME.ObstacleAvoidance = function(gameObject){
         var pos = gameObject.getPosition();
 
         for(var i in obstacles){
-            if(pos.distanceTo(obstacles[i].getPosition()) < ( distance + obstacles[i].mesh.geometry.boundingSphere.radius)){
+
+            if(obstacles[i].scale === undefined) {
+                console.warn("Obstacle scale not found; setting to 1");
+                obstacles[i].scale = 1;
+            }
+
+            if(pos.distanceTo(obstacles[i].getPosition()) < ( distance + ( obstacles[i].mesh.geometry.boundingSphere.radius * obstacles[i].scale))){
                 obstaclesInRange.push(obstacles[i]);
             }
         };
@@ -37,8 +43,8 @@ GAME.ObstacleAvoidance = function(gameObject){
 
         //closer the agent, the stronger the force... luke
         var multiplier = 1.0 + (detectionBoxLength - closestObstacleLocalPosition.z) / detectionBoxLength;
-        var obstacleRadius = obstacleObject.mesh.geometry.boundingSphere.radius;
-        var expandedRadius = obstacleRadius + (gameObject.mesh.geometry.boundingSphere.radius);
+        var obstacleRadius = obstacleObject.mesh.geometry.boundingSphere.radius * obstacleObject.scale;
+        var expandedRadius = obstacleRadius + (gameObject.mesh.geometry.boundingSphere.radius * obstacleObject.scale);
 
         steeringForce.x = (expandedRadius - Math.abs(closestObstacleLocalPosition.x)) * multiplier;
         steeringForce.y = (expandedRadius - Math.abs(closestObstacleLocalPosition.y)) * multiplier;
@@ -73,8 +79,8 @@ GAME.ObstacleAvoidance = function(gameObject){
 
         if(localPos.z < 0){
 
-            var obstacleRadius = obstacleObject.mesh.geometry.boundingSphere.radius;
-            var expandedRadius = obstacleRadius + (gameObject.mesh.geometry.boundingSphere.radius / 2 );
+            var obstacleRadius = obstacleObject.mesh.geometry.boundingSphere.radius * obstacleObject.scale;
+            var expandedRadius = obstacleRadius + (gameObject.mesh.geometry.boundingSphere.radius );
 
             if( Math.abs(localPos.x) < expandedRadius &&
                 Math.abs(localPos.y) < expandedRadius ){

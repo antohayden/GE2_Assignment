@@ -91,13 +91,14 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
      * ********************************/
 
     var obstacles = [];
-    var numObstacles = 200;
+    var numObstacles = 150;
     var forceCap = 10;
 
     for (var i = 0; i < numObstacles; i++){
 
         var ob = new GAME.GameObject();
         var scale = Math.randomBetween(1,50);
+        ob.scale = scale;
         ob.mesh = assetManager.createAsteroid(scale);
         ob.setPosition(randomPosition(4000));
         ob.mass = 50;
@@ -156,7 +157,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
             ship.mesh = assetManager.createShipMesh(null, "Blue");
         }
 
-        ship.setRadius(1500);
+        ship.setRadius(1000);
 
         ship.maxSpeed = 150;
 
