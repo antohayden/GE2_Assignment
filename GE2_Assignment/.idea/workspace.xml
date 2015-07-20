@@ -37,8 +37,18 @@
       <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.892857" vertical-offset="0" max-vertical-offset="629">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            <state vertical-scroll-proportion="-26.178572" vertical-offset="66" max-vertical-offset="935">
+              <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/game.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4743">
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -51,26 +61,85 @@
               <caret line="46853" column="0" selection-start-line="46853" selection-start-column="0" selection-end-line="46853" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <marker date="1437423649426" expanded="true" signature="1097824:1098711" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1097896:1097958" placeholder="[...]" />
+                <marker date="1437423649426" expanded="true" signature="1098910:1099659" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1099013:1099186" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1099879:1100036" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1100138:1100754" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1100252:1100601" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1100946:1101404" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1101528:1101973" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1101534:1101820" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1102118:1103864" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1103243:1103358" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1103965:1106031" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1104597:1104877" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1104950:1105877" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1104973:1105179" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1105070:1105149" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1105417:1105847" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1105793:1105840" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1106146:1107743" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1107344:1107587" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1107553:1107585" placeholder="[...]" />
+                <marker date="1437423649426" expanded="true" signature="1107870:1108608" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1108733:1109388" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1109517:1110223" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1110374:1111271" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1110516:1110797" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1111423:1118142" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1111603:1111715" placeholder="/**   PLANES ...*/" />
+                <marker date="1437423649426" expanded="true" signature="1113363:1113452" placeholder="[...]" />
+                <marker date="1437423649426" expanded="true" signature="1113492:1113586" placeholder="/** OBSTACLES ...*/" />
+                <marker date="1437423649426" expanded="true" signature="1113709:1114353" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1114296:1114351" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1114413:1114569" placeholder="/** FUNCTION FOR CHECKING IF SHIPS SPAWN INSIDE OBSTACLES ...*/" />
+                <marker date="1437423649426" expanded="true" signature="1114606:1114737" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1114805:1114927" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1114986:1115091" placeholder="/** SHIPS ...*/" />
+                <marker date="1437423649426" expanded="true" signature="1115142:1116037" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1115368:1115466" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1115485:1115593" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1115788:1115903" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1115852:1115897" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1116088:1116238" placeholder="/** Stars in scene ...*/" />
+                <marker date="1437423649426" expanded="true" signature="1116239:1116969" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1116667:1116689" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1116800:1116967" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1117033:1118142" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1118445:1118481" placeholder="{...}" />
+                <marker date="1437423649426" expanded="true" signature="1118577:1119453" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lazer_example.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/gameObjects/Ships/Lazer_example.js">
+      <file leaf-file-name="SeekAndFlee.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/scenes/SeekAndFlee.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Index.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27868852" vertical-offset="0" max-vertical-offset="1513">
-              <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.6820208" vertical-offset="0" max-vertical-offset="697">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="arrive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/behaviours/arrive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+              <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -81,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/libs/PointerLockControls.js" />
-        <option value="$PROJECT_DIR$/js/gameObjects/Ships/Arriver.js" />
         <option value="$PROJECT_DIR$/js/gameObjects/Ships/Alignment_example.js" />
         <option value="$PROJECT_DIR$/js/gameObjects/Ships/Cohesion_example.js" />
         <option value="$PROJECT_DIR$/js/gameObjects/Ships/Evader.js" />
@@ -95,11 +162,9 @@
         <option value="$PROJECT_DIR$/js/gameObjects/Ships/Wanderer.js" />
         <option value="$PROJECT_DIR$/js/behaviours_Group/seperation.js" />
         <option value="$PROJECT_DIR$/js/libs/three.js" />
-        <option value="$PROJECT_DIR$/js/behaviours/arrive.js" />
         <option value="$PROJECT_DIR$/js/behaviours_Group/flocking.js" />
         <option value="$PROJECT_DIR$/assets/models/asteroid.json" />
         <option value="$PROJECT_DIR$/js/behaviours/pursue.js" />
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/scenes/Alignment_Scene.js" />
         <option value="$PROJECT_DIR$/js/scenes/ArriveAndSeek.js" />
         <option value="$PROJECT_DIR$/js/scenes/Cohesion_Scene.js" />
@@ -128,10 +193,14 @@
         <option value="$PROJECT_DIR$/js/scenes/_Assignment_Scene.js" />
         <option value="$PROJECT_DIR$/node_modules/grunt/.npmignore" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/Index.html" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/js/gameObjects/Ships/Lazer_example.js" />
         <option value="$PROJECT_DIR$/js/behaviours/obstacleAvoidance.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/js/game.js" />
+        <option value="$PROJECT_DIR$/Index.html" />
+        <option value="$PROJECT_DIR$/build/index.html" />
+        <option value="$PROJECT_DIR$/js/behaviours/arrive.js" />
+        <option value="$PROJECT_DIR$/js/scenes/ArriveAndFlee.js" />
       </list>
     </option>
   </component>
@@ -204,6 +273,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GE2_Assignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GE2_Assignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -222,11 +305,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Users\Anthony\Documents\GitHub\GE2_Assignment\GE2_Assignment\build" />
       <recent name="E:\Users\Anthony\Documents\GitHub\GE2_Assignment\GE2_Assignment\assets\models" />
       <recent name="E:\Users\Anthony\Documents\GitHub\GE2_Assignment\GE2_Assignment\js\libs" />
       <recent name="E:\Users\Anthony\Documents\GitHub\GE2_Assignment\GE2_Assignment\assets\textures\skybox" />
       <recent name="E:\Github\GE2_Assignment\GE2_Assignment\js" />
-      <recent name="E:\Users\Anthony\Documents\GitHub\BGE4Unity\Assignment\Three" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Users\Anthony\Documents\GitHub\GE2_Assignment\GE2_Assignment" />
@@ -236,7 +319,7 @@
       <recent name="E:\Users\Anthony\Documents\GitHub\GE2_Assignment\GE2_Assignment\js\libs" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Index.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Assignment/index.html">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
@@ -250,6 +333,11 @@
     <configuration default="false" name="game.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="game.js" working-dir="$PROJECT_DIR$/js">
       <RunnerSettings RunnerId="Basic" />
       <ConfigurationWrapper RunnerId="Basic" />
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GE2_Assignment/build/index.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -296,17 +384,19 @@
       <ConfigurationWrapper RunnerId="debuggableProgram" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Node.js.Gruntfile.js" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Index.html" />
       <item index="3" class="java.lang.String" itemvalue="Node.js.game.js" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Index.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.game.js" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Index.html" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.game.js" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -348,10 +438,10 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3481081" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21405405" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49837837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35243243" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21405405" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -412,20 +502,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/gameObjects/Ships/Seeker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/gameObjects/Ships/Wanderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/gameObjects/Ships/Seperation_example.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="1020">
@@ -472,13 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42873302" vertical-offset="28045" max-vertical-offset="587367">
           <caret line="1672" column="0" selection-start-line="1672" selection-start-column="0" selection-end-line="1672" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/behaviours/arrive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -599,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/scenes/SeekAndFlee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/behaviours_Group/nearestNeighbour.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.606466" vertical-offset="0" max-vertical-offset="1105">
@@ -617,13 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="1037">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/utils/assetManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2010" max-vertical-offset="3060">
-          <caret line="140" column="44" selection-start-line="140" selection-start-column="44" selection-end-line="140" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -704,13 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.11371238" vertical-offset="918" max-vertical-offset="4743">
-          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/scenes/_Assignment_Scene.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="4148">
@@ -719,36 +767,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/GE2_Assignment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="796360" max-vertical-offset="811818">
-          <caret line="46853" column="0" selection-start-line="46853" selection-start-column="0" selection-end-line="46853" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/behaviours/obstacleAvoidance.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49173555" vertical-offset="374" max-vertical-offset="3179">
           <caret line="46" column="118" selection-start-line="46" selection-start-column="118" selection-end-line="46" selection-end-column="118" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/gameObjects/Ships/Lazer_example.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.892857" vertical-offset="0" max-vertical-offset="629">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -769,10 +791,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/assets/models/asteroid.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utils/assetManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.3164363" vertical-offset="0" max-vertical-offset="3604">
+          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.178572" vertical-offset="66" max-vertical-offset="935">
+          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4743">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27868852" vertical-offset="0" max-vertical-offset="1513">
-          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1683">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/gameObjects/Ships/Lazer_example.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57978076" vertical-offset="0" max-vertical-offset="833">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/GE2_Assignment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="796360" max-vertical-offset="811818">
+          <caret line="46853" column="0" selection-start-line="46853" selection-start-column="0" selection-end-line="46853" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1437423649426" expanded="true" signature="1097824:1098711" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1097896:1097958" placeholder="[...]" />
+            <marker date="1437423649426" expanded="true" signature="1098910:1099659" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1099013:1099186" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1099879:1100036" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1100138:1100754" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1100252:1100601" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1100946:1101404" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1101528:1101973" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1101534:1101820" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1102118:1103864" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1103243:1103358" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1103965:1106031" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1104597:1104877" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1104950:1105877" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1104973:1105179" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1105070:1105149" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1105417:1105847" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1105793:1105840" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1106146:1107743" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1107344:1107587" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1107553:1107585" placeholder="[...]" />
+            <marker date="1437423649426" expanded="true" signature="1107870:1108608" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1108733:1109388" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1109517:1110223" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1110374:1111271" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1110516:1110797" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1111423:1118142" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1111603:1111715" placeholder="/**   PLANES ...*/" />
+            <marker date="1437423649426" expanded="true" signature="1113363:1113452" placeholder="[...]" />
+            <marker date="1437423649426" expanded="true" signature="1113492:1113586" placeholder="/** OBSTACLES ...*/" />
+            <marker date="1437423649426" expanded="true" signature="1113709:1114353" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1114296:1114351" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1114413:1114569" placeholder="/** FUNCTION FOR CHECKING IF SHIPS SPAWN INSIDE OBSTACLES ...*/" />
+            <marker date="1437423649426" expanded="true" signature="1114606:1114737" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1114805:1114927" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1114986:1115091" placeholder="/** SHIPS ...*/" />
+            <marker date="1437423649426" expanded="true" signature="1115142:1116037" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1115368:1115466" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1115485:1115593" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1115788:1115903" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1115852:1115897" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1116088:1116238" placeholder="/** Stars in scene ...*/" />
+            <marker date="1437423649426" expanded="true" signature="1116239:1116969" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1116667:1116689" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1116800:1116967" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1117033:1118142" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1118445:1118481" placeholder="{...}" />
+            <marker date="1437423649426" expanded="true" signature="1118577:1119453" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/behaviours/arrive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/scenes/SeekAndFlee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6820208" vertical-offset="0" max-vertical-offset="697">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
           <folding />
         </state>
       </provider>

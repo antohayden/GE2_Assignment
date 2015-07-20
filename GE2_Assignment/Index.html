@@ -3,79 +3,89 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+
+    <style>
+        #footer{
+            position: absolute;
+            bottom: 0;
+        }
+
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
+    <script src="js/libs/jquery-2.1.3.js"></script>
+    <script src="js/libs/three.js"></script>
+    <script src="js/libs/PointerLockControls.js"></script>
+    <script src="js/libs/dat.gui.min.js"></script>
+    <script src="js/game.js"></script>
 
-    <script src="build/GE2_Assignment.js"></script>
-    <!--<script src="js/libs/jquery-2.1.3.js"></script>-->
-    <!--<script src="js/libs/three.js"></script>-->
-    <!--<script src="js/libs/PointerLockControls.js"></script>-->
-    <!--<script src="js/libs/dat.gui.min.js"></script>-->
-    <!--<script src="js/game.js"></script>-->
+    <script src="js/scenes/SeekAndFlee.js"></script>
+    <script src="js/scenes/ArriveAndSeek.js"></script>
+    <script src="js/scenes/SeekAndPursue.js"></script>
+    <script src="js/scenes/SeekAndEvade.js"></script>
+    <script src="js/scenes/MultiWander.js"></script>
+    <script src="js/scenes/OffsetPursuit_Scene.js"></script>
+    <script src="js/scenes/ObstacleAvoidance_Scene.js"></script>
+    <script src="js/scenes/PlaneAvoidance_Scene.js"></script>
+    <script src="js/scenes/Seperation_Scene.js"></script>
+    <script src="js/scenes/Cohesion_Scene.js"></script>
+    <script src="js/scenes/Alignment_Scene.js"></script>
+    <script src="js/scenes/Flocking_Scene.js"></script>
+    <script src="js/scenes/Lazer_Scene.js"></script>
+    <script src="js/scenes/Explosion_Scene.js"></script>
+    <script src="js/scenes/_Assignment_Scene.js"></script>
 
-    <!--<script src="js/scenes/SeekAndFlee.js"></script>-->
-    <!--<script src="js/scenes/ArriveAndSeek.js"></script>-->
-    <!--<script src="js/scenes/SeekAndPursue.js"></script>-->
-    <!--<script src="js/scenes/SeekAndEvade.js"></script>-->
-    <!--<script src="js/scenes/MultiWander.js"></script>-->
-    <!--<script src="js/scenes/OffsetPursuit_Scene.js"></script>-->
-    <!--<script src="js/scenes/ObstacleAvoidance_Scene.js"></script>-->
-    <!--<script src="js/scenes/PlaneAvoidance_Scene.js"></script>-->
-    <!--<script src="js/scenes/Seperation_Scene.js"></script>-->
-    <!--<script src="js/scenes/Cohesion_Scene.js"></script>-->
-    <!--<script src="js/scenes/Alignment_Scene.js"></script>-->
-    <!--<script src="js/scenes/Flocking_Scene.js"></script>-->
-    <!--<script src="js/scenes/Lazer_Scene.js"></script>-->
-    <!--<script src="js/scenes/Explosion_Scene.js"></script>-->
-    <!--<script src="js/scenes/_Assignment_Scene.js"></script>-->
+    <script src="js/behaviours/seek.js"></script>
+    <script src="js/behaviours/flee.js"></script>
+    <script src="js/behaviours/arrive.js"></script>
+    <script src="js/behaviours/pursue.js"></script>
+    <script src="js/behaviours/evade.js"></script>
+    <script src="js/behaviours/wander.js"></script>
+    <script src="js/behaviours/pathFollow.js"></script>
+    <script src="js/behaviours/obstacleAvoidance.js"></script>
+    <script src="js/behaviours/offsetPursuit.js"></script>
+    <script src="js/behaviours/planeAvoidance.js"></script>
+    <script src="js/behaviours_Group/nearestNeighbour.js"></script>
+    <script src="js/behaviours_Group/seperation.js"></script>
+    <script src="js/behaviours_Group/cohesion.js"></script>
+    <script src="js/behaviours_Group/alignment.js"></script>
+    <script src="js/behaviours_Group/flocking.js"></script>
+    <script src="js/behaviours_Group/shipPriorities.js"></script>
 
-    <!--<script src="js/behaviours/seek.js"></script>-->
-    <!--<script src="js/behaviours/flee.js"></script>-->
-    <!--<script src="js/behaviours/arrive.js"></script>-->
-    <!--<script src="js/behaviours/pursue.js"></script>-->
-    <!--<script src="js/behaviours/evade.js"></script>-->
-    <!--<script src="js/behaviours/wander.js"></script>-->
-    <!--<script src="js/behaviours/pathFollow.js"></script>-->
-    <!--<script src="js/behaviours/obstacleAvoidance.js"></script>-->
-    <!--<script src="js/behaviours/offsetPursuit.js"></script>-->
-    <!--<script src="js/behaviours/planeAvoidance.js"></script>-->
-    <!--<script src="js/behaviours_Group/nearestNeighbour.js"></script>-->
-    <!--<script src="js/behaviours_Group/seperation.js"></script>-->
-    <!--<script src="js/behaviours_Group/cohesion.js"></script>-->
-    <!--<script src="js/behaviours_Group/alignment.js"></script>-->
-    <!--<script src="js/behaviours_Group/flocking.js"></script>-->
-    <!--<script src="js/behaviours_Group/shipPriorities.js"></script>-->
+    <script src="js/gameObjects/gameObject.js"></script>
+    <script src="js/gameObjects/Ships/Seeker.js"></script>
+    <script src="js/gameObjects/Ships/Fleer.js"></script>
+    <script src="js/gameObjects/Ships/Arriver.js"></script>
+    <script src="js/gameObjects/Ships/Pursuer.js"></script>
+    <script src="js/gameObjects/Ships/Evader.js"></script>
+    <script src="js/gameObjects/Ships/Wanderer.js"></script>
+    <script src="js/gameObjects/Ships/OffsetPusuer.js"></script>
+    <script src="js/gameObjects/Ships/ObstacleAvoider.js"></script>
+    <script src="js/gameObjects/Ships/PlaneAvoider.js"></script>
+    <script src="js/gameObjects/Ships/Seperation_example.js"></script>
+    <script src="js/gameObjects/Ships/Cohesion_example.js"></script>
+    <script src="js/gameObjects/Ships/Alignment_example.js"></script>
+    <script src="js/gameObjects/Ships/Flock_example.js"></script>
+    <script src="js/gameObjects/Ships/Lazer_example.js"></script>
+    <script src="js/gameObjects/path.js"></script>
+    <script src="js/gameObjects/Lazer.js"></script>
+    <script src="js/gameObjects/explosion.js"></script>
+    <script src="js/gameObjects/Ships/_Assignment_Ship.js"></script>
 
-    <!--<script src="js/gameObjects/gameObject.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Seeker.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Fleer.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Arriver.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Pursuer.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Evader.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Wanderer.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/OffsetPusuer.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/ObstacleAvoider.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/PlaneAvoider.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Seperation_example.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Cohesion_example.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Alignment_example.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Flock_example.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/Lazer_example.js"></script>-->
-    <!--<script src="js/gameObjects/path.js"></script>-->
-    <!--<script src="js/gameObjects/Lazer.js"></script>-->
-    <!--<script src="js/gameObjects/explosion.js"></script>-->
-    <!--<script src="js/gameObjects/Ships/_Assignment_Ship.js"></script>-->
+    <script src="js/states/AttackState.js"></script>
+    <script src="js/states/DeathState.js"></script>
+    <script src="js/states/IdleState.js"></script>
+    <script src="js/states/EvadeState.js"></script>
+    <script src="js/states/StateMachine.js"></script>
 
-    <!--<script src="js/states/AttackState.js"></script>-->
-    <!--<script src="js/states/DeathState.js"></script>-->
-    <!--<script src="js/states/IdleState.js"></script>-->
-    <!--<script src="js/states/EvadeState.js"></script>-->
-    <!--<script src="js/states/StateMachine.js"></script>-->
-
-    <!--<script src="js/utils/lineDrawer.js"></script>-->
-    <!--<script src="js/utils/assetManager.js"></script>-->
-    <!--<script src="js/utils/controls.js"></script>-->
-    <!--<script src="js/utils/mathAddons.js"></script>-->
+    <script src="js/utils/lineDrawer.js"></script>
+    <script src="js/utils/assetManager.js"></script>
+    <script src="js/utils/controls.js"></script>
+    <script src="js/utils/mathAddons.js"></script>
 
     <script>
         var game = new GAME();

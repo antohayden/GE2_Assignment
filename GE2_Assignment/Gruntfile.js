@@ -21,12 +21,30 @@ module.exports = function(grunt) {
                 ],
                 dest: 'build/GE2_Assignment.js'
             }
+        },
+        watch: {
+            js: {
+                files: ['js/**/*.js'],
+                tasks: ['concat']
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'build/GE2_Assignment.min.js' : ['build/GE2_Assignment.js']
+                }
+            }
+
         }
     });
 
+
+
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default task(s).
-    grunt.registerTask('default', ['concat']);
+    grunt.registerTask('default', ['concat', 'watch']);
 
 };

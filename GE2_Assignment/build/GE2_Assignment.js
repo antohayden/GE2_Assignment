@@ -45128,7 +45128,7 @@ GAME.ObstacleAvoidance = function(gameObject){
 
         //closer the agent, the stronger the force... luke
         var multiplier = 1.0 + (detectionBoxLength - closestObstacleLocalPosition.z) / detectionBoxLength;
-        var obstacleRadius = obstacleObject.mesh.geometry.boundingSphere.radius * ( obstacleObject.scale / 2);
+        var obstacleRadius = obstacleObject.mesh.geometry.boundingSphere.radius * obstacleObject.scale;
         var expandedRadius = obstacleRadius + (gameObject.mesh.geometry.boundingSphere.radius * obstacleObject.scale);
 
         steeringForce.x = (expandedRadius - Math.abs(closestObstacleLocalPosition.x)) * multiplier;
