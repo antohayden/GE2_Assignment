@@ -39,5 +39,5 @@ GAME.Lazer_example = function(gameObjects, scene){
 
 };
 
-GAME.Seeker.prototype = Object.create(GAME.GameObject);
+GAME.Lazer_example.prototype = Object.create(GAME.GameObject);
 

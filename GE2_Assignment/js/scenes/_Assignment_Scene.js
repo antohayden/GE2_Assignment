@@ -157,7 +157,7 @@ GAME.Assignment_Scene = function(assetManager, gameObjects, scene, camera){
             ship.mesh = assetManager.createShipMesh(null, "Blue");
         }
 
-        ship.setRadius(1000);
+        ship.setRadius(800);
 
         ship.maxSpeed = 150;
 
