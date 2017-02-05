@@ -14,7 +14,7 @@ A demo can be found [here](http://antohayden.com/steeringbehaviours)
 To select a demo, drop down the Scenes menu and check one of the demo flags.  
 The spaceDemo (last one) is a combination of all the previous ones in the form of an autonomous space battle
 
-**Camera**: Mouse movement.
+**Camera**: Mouse movement  
 **W**: Forward  
 **A**: Turn Left  
 **S**: Back  
